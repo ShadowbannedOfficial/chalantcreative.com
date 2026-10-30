@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CHALANT CREATIVE — Coming Soon</title>
+<meta name="description" content="Chalant Creative. Something is coming. Under construction.">
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="CHALANT CREATIVE — Coming Soon">
+<meta property="og:description" content="Under construction. Coming soon.">
+<meta property="og:image" content="https://chalantcreative.com/logo.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<style>
+  :root{
+    --tape:#ffd400;
+    --ink:#0a0a0a;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;height:100dvh}
+  body{
+    margin:0;
+    background:#000;
+    color:#fff;
+    overflow:hidden;
+    overscroll-behavior:none;
+    -webkit-font-smoothing:antialiased;
+    -webkit-text-size-adjust:100%;
+    font-family:"Helvetica Neue",Helvetica,Arial,"Segoe UI",system-ui,sans-serif;
+  }
+  .stage{
+    position:fixed;
+    inset:0;
+    display:grid;
+    place-items:center;
+    overflow:hidden;
+  }
+
+  /* ---------- wide screens: full-bleed square lockup ---------- */
+  .logo{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:100% 100%;
+    display:block;
+    user-select:none;
+    -webkit-user-drag:none;
+  }
+  .lockup{display:none}
+
+  /* ---------- photoreal caution tape ---------- */
+  .tape{
+    position:absolute;
+    top:34%;
+    left:50%;
+    width:150vmax;
+    aspect-ratio:3840 / 570;
+    transform:translate(-50%,-50%) rotate(-2.5deg);
+    background-image:url("tape.jpg");
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+    pointer-events:none;
+  }
+  .tape__text{
+    position:absolute;
+    left:0;
+    right:0;
+    top:50%;
+    transform:translateY(-50%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:0 .55em;
+    padding-inline:2vw;
+    color:#0a0a0a;
+    font-weight:800;
+    font-size:clamp(17px,2.55vw,46px);
+    line-height:1;
+    letter-spacing:.015em;
+    text-transform:uppercase;
+    white-space:nowrap;
+    text-shadow:none;
+  }
+  .dot{
+    width:.2em;
+    height:.2em;
+    border-radius:50%;
+    background:#0a0a0a;
+    flex:0 0 auto;
+  }
+
+  /* ---------- iPhone / portrait ---------- */
+  @media (max-width:640px), (orientation:portrait) and (max-width:900px){
+    .logo{display:none}
+    .lockup{
+      display:block;
+      position:absolute;
+      left:50%;
+      top:58%;
+      width:min(94vw,540px);
+      height:auto;
+      transform:translate(-50%,-50%);
+      user-select:none;
+      -webkit-user-drag:none;
+    }
+    /* ribbon sits above the wordmark, not across it */
+    .tape{
+      top:30%;
+      width:240vw;
+      transform:translate(-50%,-50%) rotate(-3deg);
+    }
+    .tape__text{
+      font-size:clamp(12px,3.5vw,20px);
+      letter-spacing:.005em;
+      gap:0 .45em;
+      padding-inline:1vw;
+    }
+  }
+
+  /* small phones: pull the lockup slightly tighter to the ribbon */
+  @media (max-width:400px){
+    .lockup{top:60%;width:96vw}
+    .tape{top:31%}
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    .tape{animation:settle .8s cubic-bezier(.22,.8,.24,1) both}
+    /* transform only — the ribbon never fades, so it is always fully opaque */
+    @keyframes settle{
+      from{transform:translate(-50%,-50%) rotate(-2.5deg) translateY(-18px)}
+      to{transform:translate(-50%,-50%) rotate(-2.5deg)}
+    }
+  }
+  @media (prefers-reduced-motion:no-preference) and (max-width:640px){
+    @keyframes settle{
+      from{transform:translate(-50%,-50%) rotate(-3deg) translateY(-18px)}
+      to{transform:translate(-50%,-50%) rotate(-3deg)}
+    }
+  }
+</style>
+</head>
+<body>
+  <main class="stage">
+    <img class="logo" src="logo.png" alt="Chalant Creative" width="3000" height="3000">
+    <img class="lockup" src="lockup.png" alt="Chalant Creative" width="1418" height="517">
+    <div class="tape" role="img" aria-label="Under construction. Coming soon.">
+      <div class="tape__text">
+        <span>Under Construction</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>Coming Soon</span>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
