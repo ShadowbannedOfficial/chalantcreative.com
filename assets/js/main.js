@@ -103,6 +103,16 @@
         return;
       }
 
+      // The form is novalidate so we can style errors ourselves, which means
+      // the address has to be checked here or a typo silently kills the mailto.
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        if (status) {
+          status.textContent = 'That email address does not look complete. Check it and try again.';
+          status.classList.add('is-error');
+        }
+        return;
+      }
+
       if (status) {
         status.classList.remove('is-error');
         status.textContent = '';
