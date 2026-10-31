@@ -18,7 +18,13 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preload" href="assets/css/styles.css" as="style">
 <link rel="stylesheet" href="assets/css/styles.css">
-<script>document.documentElement.classList.add('js');</script>
+<script>
+  /* Progressive enhancement only: with JS off, every section is fully visible. */
+  document.documentElement.classList.add('js');
+  window.setTimeout(function () {
+    if (!window.__chalantRevealReady) document.documentElement.classList.remove('js');
+  }, 2500);
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

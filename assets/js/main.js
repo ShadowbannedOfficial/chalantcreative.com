@@ -50,6 +50,8 @@
     revealEls.forEach(function (el) { el.classList.remove('is-pre'); el.classList.add('is-in'); });
   }
 
+  window.__chalantRevealReady = true;
+
   if ('IntersectionObserver' in window && revealEls.length) {
     var fold = window.innerHeight;
 
