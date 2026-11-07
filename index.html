@@ -215,6 +215,41 @@
     letter-spacing:-.03em;
   }
 
+  /* Next module: a display headline and a subordinate paragraph. */
+  .follow{
+    min-height:100dvh;
+    padding-block:clamp(80px,16vh,200px) clamp(96px,18vh,220px);
+    padding-left:max(16px,4.5vw,env(safe-area-inset-left,0px));
+    padding-right:max(16px,4.5vw,env(safe-area-inset-right,0px));
+    text-align:left;
+  }
+  .follow h2,
+  .follow p{
+    margin:0;
+    max-width:100%;
+    text-align:left;
+    hyphens:none;
+    word-break:normal;
+    overflow-wrap:normal;
+  }
+  .follow h2{
+    max-width:16em;
+    font-size:clamp(40px,6.6vw,96px);
+    font-weight:800;
+    line-height:.96;
+    letter-spacing:-.04em;
+    text-wrap:pretty;
+  }
+  .follow p{
+    max-width:34em;
+    margin-top:clamp(36px,6vh,80px);
+    font-size:clamp(20px,1.7vw,28px);
+    font-weight:400;
+    line-height:1.45;
+    letter-spacing:-.011em;
+    text-wrap:pretty;
+  }
+
   @media (prefers-reduced-motion:no-preference){
     .tape{animation:settle .8s cubic-bezier(.22,.8,.24,1) both}
     /* transform only — the ribbon never fades, so it is always fully opaque */
@@ -245,6 +280,10 @@
       <p class="pair"><span class="slogan">Entertain the masses</span><span class="support">Stop the scroll</span></p>
       <p class="pair"><span class="slogan">Educate the interested</span><span class="support">Teach</span></p>
       <p class="pair"><span class="slogan">Sell the committed</span><span class="support">Cash in</span></p>
+    </section>
+    <section class="follow">
+      <h2>A video you post today can bring you business months from now.</h2>
+      <p>We write, produce, and distribute content people can keep finding. Each piece has a job: introduce your business, explain what you offer, or give someone a reason to buy.</p>
     </section>
   </main>
 </body>
