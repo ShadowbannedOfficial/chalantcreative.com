@@ -22,12 +22,12 @@
     --tilt:.043661;
   }
   *{box-sizing:border-box}
-  html,body{height:100%;height:100dvh}
+  html,body{height:auto;min-height:100%}
   body{
     margin:0;
     background:#000;
     color:#fff;
-    overflow:hidden;
+    overflow-x:clip;
     overscroll-behavior:none;
     -webkit-font-smoothing:antialiased;
     -webkit-text-size-adjust:100%;
@@ -53,8 +53,8 @@
      mark instead of only at the screen centre.
      ------------------------------------------------------------------ */
   .stage{
-    position:fixed;
-    inset:0;
+    position:relative;
+    height:100dvh;
     overflow:hidden;
 
     /* 66vw holds the mark's centre close to the screen centre. The ribbon
@@ -62,17 +62,12 @@
        midline at only one x: the screen centre and the wordmark's centre
        have to share the error between them. A bigger mark keeps the two
        points closer together, and keeps that shared error inside tolerance
-       at every shape. The height cap only steps in on short windows, so
-       the lines under the wordmark stay on screen and the mark never
-       grows taller than the space above them. */
-    --copy-gap:clamp(16px,2dvh,28px);
-    --copy-block:clamp(150px,20dvh,220px);
-    --stage-pad:max(clamp(12px,2.2dvh,28px),env(safe-area-inset-bottom,0px));
-    --mark-bottom:calc(var(--copy-gap) + var(--copy-block) + var(--stage-pad));
-    --mark-w:min(66vw,calc((100dvh - var(--mark-bottom) - 2dvh) * 1370 / 468));
+       at every shape. 240dvh only steps in on very wide letterbox windows,
+       so the mark never grows taller than the screen. */
+    --mark-w:min(66vw,240dvh);
     --mark-h:calc(var(--mark-w) * 468 / 1370);
     --mark-right:5vw;
-    --mark-left:calc(100% - var(--mark-right) - var(--mark-w));
+    --mark-bottom:8dvh;
     --mark-top:calc(100dvh - var(--mark-bottom) - var(--mark-h));
 
     --chalant-mid:calc(var(--mark-top) + var(--mark-h) * .234);
@@ -158,52 +153,15 @@
     flex:0 0 auto;
   }
 
-  /* ---------- lines under the wordmark, left-aligned to its ink ---------- */
-  .lines{
-    position:absolute;
-    z-index:2;
-    left:var(--mark-left);
-    top:calc(var(--mark-top) + var(--mark-h) + var(--copy-gap));
-    width:max-content;
-    max-width:calc(100% - var(--mark-left) - var(--mark-right));
-    margin:0;
-    text-align:left;
-    color:#fff;
-  }
-  .pair{
-    margin:0;
-    font-size:clamp(16px,1.35vw,24px);
-    line-height:1.15;
-    font-weight:400;
-  }
-  .pair + .pair{margin-top:0.72em}
-  .slogan,
-  .support{display:block;white-space:nowrap}
-  .slogan{
-    font-weight:700;
-    letter-spacing:-0.02em;
-  }
-  .support{
-    margin-top:0.12em;
-    font-size:0.74em;
-    font-weight:400;
-    line-height:1.25;
-    letter-spacing:0.01em;
-  }
-
   /* ---------- iPhone / portrait: centred lockup ---------- */
   @media (max-aspect-ratio:1/1){
     .stage{
-      --mark-w:min(88vw,152dvh,calc((100dvh - var(--copy-gap) - var(--copy-block) - var(--stage-pad) - 8dvh) * 1370 / 468));
-      --mark-left:calc(50% - var(--mark-w) / 2);
-      --mark-top:min(
-        calc(60dvh - var(--mark-h) / 2),
-        calc(100dvh - var(--copy-gap) - var(--copy-block) - var(--stage-pad) - var(--mark-h))
-      );
+      --mark-w:min(88vw,152dvh);
+      --mark-top:calc(60dvh - var(--mark-h) / 2);
       --tape-drop:0px;
       --tape-h:min(35.6vw,26dvh);
     }
-    .mark{right:auto;left:var(--mark-left)}
+    .mark{right:auto;left:calc(50% - var(--mark-w) / 2)}
     .mark--wide{display:none}
     .mark--tall{display:block}
     .tape__text{
@@ -214,6 +172,49 @@
     }
   }
 
+  /* The statement is the next module: full width, left aligned, and set
+     at the same scale as the wordmark rather than as a caption under it. */
+  .statement{
+    min-height:100dvh;
+    padding-block:clamp(80px,16vh,200px) clamp(96px,18vh,220px);
+    padding-left:max(16px,4.5vw,env(safe-area-inset-left,0px));
+    padding-right:max(16px,4.5vw,env(safe-area-inset-right,0px));
+    text-align:left;
+  }
+  .pair{
+    margin:0;
+    max-width:100%;
+    /* 10.5vw matches CHALANT's cap height in the wide lockup (66vw × 217/1370). */
+    font-size:clamp(42px,10.5vw,240px);
+    font-weight:800;
+    line-height:.9;
+    letter-spacing:-.045em;
+  }
+  @media (max-aspect-ratio:1/1){
+    .pair{
+      /* Portrait lockup is 88vw, so the cap height is 13.9vw. */
+      font-size:clamp(46px,13.9vw,140px);
+    }
+  }
+  .pair + .pair{margin-top:clamp(64px,12vh,160px)}
+  .slogan,
+  .support{
+    display:block;
+    max-width:100%;
+    text-align:left;
+    text-wrap:balance;
+    hyphens:none;
+    word-break:normal;
+    overflow-wrap:normal;
+  }
+  .support{
+    margin-top:.2em;
+    font-size:clamp(28px,.5em,96px);
+    font-weight:700;
+    line-height:1.05;
+    letter-spacing:-.03em;
+  }
+
   @media (prefers-reduced-motion:no-preference){
     .tape{animation:settle .8s cubic-bezier(.22,.8,.24,1) both}
     /* transform only — the ribbon never fades, so it is always fully opaque */
@@ -222,24 +223,29 @@
       to{transform:translateX(-50%) rotate(-2.5deg)}
     }
   }
+  @media (prefers-reduced-motion:reduce){
+    .tape{animation:none}
+  }
 </style>
 </head>
 <body>
-  <main class="stage">
-    <div class="mark mark--wide"><img src="logo.png" alt="Chalant Creative" width="3000" height="3000"></div>
-    <div class="mark mark--tall"><img src="lockup.png" alt="Chalant Creative" width="1418" height="517"></div>
-    <div class="tape" role="img" aria-label="Under construction. Coming soon.">
-      <div class="tape__text">
-        <span>Under Construction</span>
-        <span class="dot" aria-hidden="true"></span>
-        <span>Coming Soon</span>
+  <main>
+    <section class="stage">
+      <div class="mark mark--wide"><img src="logo.png" alt="Chalant Creative" width="3000" height="3000"></div>
+      <div class="mark mark--tall"><img src="lockup.png" alt="Chalant Creative" width="1418" height="517"></div>
+      <div class="tape" role="img" aria-label="Under construction. Coming soon.">
+        <div class="tape__text">
+          <span>Under Construction</span>
+          <span class="dot" aria-hidden="true"></span>
+          <span>Coming Soon</span>
+        </div>
       </div>
-    </div>
-    <div class="lines">
+    </section>
+    <section class="statement">
       <p class="pair"><span class="slogan">Entertain the masses</span><span class="support">Stop the scroll</span></p>
       <p class="pair"><span class="slogan">Educate the interested</span><span class="support">Teach</span></p>
       <p class="pair"><span class="slogan">Sell the committed</span><span class="support">Cash in</span></p>
-    </div>
+    </section>
   </main>
 </body>
 </html>
