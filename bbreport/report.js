@@ -316,7 +316,7 @@
     if (!isBlank(data.client)) hiddenLead = data.client + ' social progress report';
     h1.appendChild(el('span', 'visually-hidden', hiddenLead + '. '));
     h1.appendChild(periodColumn(data.postingPeriod, 'While posting'));
-    h1.appendChild(periodColumn(data.postHalt, 'After posting stopped'));
+    h1.appendChild(periodColumn(data.postHalt, 'When Nativz took over'));
     heroBlock.appendChild(h1);
 
     var changeP = el('p', 'change');

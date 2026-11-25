@@ -48,9 +48,9 @@ window.BBREPORT_DATA = {
   hero: {
     kicker: "For {{audience}}",
     /* Shown while postHalt.views is null. */
-    dekPending: "The first window is the thirty days Chalant was posting to the {{client}} {{platform}}. The second is the thirty days after posting stopped, and it is not in yet.",
+    dekPending: "The first window is the thirty days Chalant was posting to the {{client}} {{platform}}. The second is the thirty days when {{handoffFirm}} took over, and it is not in yet.",
     /* Shown once both view totals are numbers. {{changeSentence}} is computed. */
-    dekComplete: "The first window is the thirty days Chalant was posting to the {{client}} {{platform}}. The second is the thirty days after posting stopped."
+    dekComplete: "The first window is the thirty days Chalant was posting to the {{client}} {{platform}}. The second is the thirty days when {{handoffFirm}} took over."
   },
 
   /* The thirty days Brian was posting. Views are recorded. Dates are not yet. */
@@ -62,9 +62,9 @@ window.BBREPORT_DATA = {
     end: ""
   },
 
-  /* The thirty days after posting stopped. views stays null until the real count is in. */
+  /* The thirty days when Nativz took over. views stays null until the real count is in. */
   postHalt: {
-    label: "After posting stopped",
+    label: "When Nativz took over",
     span: "30 days",
     views: null,
     start: "",
@@ -107,7 +107,7 @@ window.BBREPORT_DATA = {
       "This note is for {{audience}}, from {{author}} at {{studio}}. It covers the {{client}} {{platform}} account in {{place}}.",
       "Chalant posted for thirty days. In that window the account received {{postingViews}} views.",
       "[Brian: replace this with the dates of that posting window and anything you want Sherry and David to remember about the month.]",
-      "Around {{handoffDate}}, the marketing firm {{handoffFirm}} took over direction and posting stopped. The total for the thirty days after that handoff is {{postHaltViews}}.",
+      "Around {{handoffDate}}, {{handoffFirm}} took over direction of the account. The total for the thirty days when {{handoffFirm}} took over is {{postHaltViews}}.",
       "[Brian: replace this once the second total is in. Write what the comparison means, and what you recommend.]"
     ]
   },
@@ -129,6 +129,6 @@ window.BBREPORT_DATA = {
   },
 
   /* Footnote. The page picks one from whether the post-halt total is in. */
-  sourcePending: "Instagram views. The thirty days after posting stopped are still open. That total is expected around {{followUpDate}}.",
+  sourcePending: "Instagram views. The thirty days when {{handoffFirm}} took over are still open. That total is expected around {{followUpDate}}.",
   sourceComplete: "Instagram views for the two thirty-day windows above."
 };
