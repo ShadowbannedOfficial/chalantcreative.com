@@ -100,6 +100,23 @@ window.BBREPORT_DATA = {
     dek: "Followers, average views per post, and top posts. Each stays pending until a real figure is entered. Nothing on this page is estimated."
   },
 
+  /*
+    Two claims Nativz has stated. Edit the sentences here.
+    The 1 billion figure is their claim, not a Chalant measurement.
+    A line that starts with [Brian: shows as a draft note until you replace it.
+  */
+  claims: {
+    kicker: "Two claims",
+    title: "On views and revenue.",
+    paragraphs: [
+      "{{handoffFirm}} has said that views do not equal revenue. That is fair. Views alone are not sales. Reach is what puts the bar in front of new customers in the first place.",
+      "{{handoffFirm}} promotes having generated 1 billion views.",
+      "Set side by side, the two claims leave a question that is reasonable to ask."
+    ],
+    questionLabel: "Worth asking",
+    question: "If views do not equal revenue, which client was {{handoffFirm}}'s top-performing video for, and how much revenue did it generate?"
+  },
+
   narrative: {
     kicker: "Notes",
     title: "What the two windows are.",

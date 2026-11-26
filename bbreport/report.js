@@ -436,6 +436,8 @@
     notes.appendChild(prose);
     frag.appendChild(notes);
 
+    frag.appendChild(renderClaims(data, change));
+
     var close = el('section', 'block wrap');
     close.appendChild(el('p', 'eyebrow', isBlank(next.kicker) ? 'Next' : next.kicker));
     var closeTitle = el('h2', 'section-title', isBlank(next.title) ? 'What happens next.' : next.title);
@@ -514,6 +516,46 @@
     requestAnimationFrame(function () {
       scaleBars(postingBar, haltBar);
     });
+  }
+
+  function renderClaims(data, change) {
+    var claims = data.claims || {};
+    var paragraphs = (claims.paragraphs || []).filter(function (item) { return !isBlank(item); });
+    var hasQuestion = !isBlank(claims.question);
+    if (!paragraphs.length && !hasQuestion && isBlank(claims.title)) return document.createDocumentFragment();
+
+    var section = el('section', 'block wrap');
+    var kicker = isBlank(claims.kicker) ? 'Two claims' : claims.kicker;
+    section.appendChild(el('p', 'eyebrow', kicker));
+    var title = el('h2', 'section-title', isBlank(claims.title) ? 'On views and revenue.' : claims.title);
+    title.id = 'claims-heading';
+    section.setAttribute('aria-labelledby', 'claims-heading');
+    section.appendChild(title);
+
+    if (paragraphs.length) {
+      var prose = el('div', 'prose');
+      paragraphs.forEach(function (paragraph) {
+        appendCopy(prose, paragraph, data, change);
+      });
+      section.appendChild(prose);
+    }
+
+    if (hasQuestion) {
+      var quote = el('blockquote', 'pull');
+      if (!isBlank(claims.questionLabel)) {
+        quote.appendChild(el('span', 'pull__label', claims.questionLabel));
+      }
+      if (isDraft(claims.question)) {
+        appendDraft(quote, claims.question);
+      } else {
+        var line = el('p', 'pull__text');
+        appendRich(line, claims.question, data, change);
+        quote.appendChild(line);
+      }
+      section.appendChild(quote);
+    }
+
+    return section;
   }
 
   function scaleBars(postingBar, haltBar) {
