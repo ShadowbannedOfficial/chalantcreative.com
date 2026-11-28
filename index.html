@@ -3,17 +3,68 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>CHALANT CREATIVE — Coming Soon</title>
-<meta name="description" content="Chalant Creative. Something is coming. Under construction.">
+<title>CHALANT | Organic Social Media Agency in Dallas–Fort Worth</title>
+<meta name="description" content="CHALANT is a Dallas–Fort Worth social media agency. Campaign strategy, content creation, and community management, without paid ads.">
 <meta name="theme-color" content="#000000">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="CHALANT CREATIVE — Coming Soon">
-<meta property="og:description" content="Under construction. Coming soon.">
+<meta property="og:title" content="CHALANT | Organic Social Media Agency in Dallas–Fort Worth">
+<meta property="og:description" content="CHALANT is a Dallas–Fort Worth social media agency. Campaign strategy, content creation, and community management, without paid ads.">
 <meta property="og:image" content="https://chalantcreative.com/logo.png">
 <meta property="og:type" content="website">
-<link rel="icon" href="favicon.png">
-<link rel="apple-touch-icon" href="favicon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CHALANT | Organic Social Media Agency in Dallas–Fort Worth">
+<meta name="twitter:description" content="CHALANT is a Dallas–Fort Worth social media agency. Campaign strategy, content creation, and community management, without paid ads."><!-- seo-home-v1 -->
+<link rel="canonical" href="https://chalantcreative.com/">
+<meta property="og:url" content="https://chalantcreative.com/">
+<meta property="og:site_name" content="CHALANT">
+<meta property="og:locale" content="en_US">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["ProfessionalService", "LocalBusiness"],
+  "name": "CHALANT",
+  "alternateName": "CHALANT Creative",
+  "legalName": "CHALANT CREATIVE LLC",
+  "url": "https://chalantcreative.com",
+  "image": "https://chalantcreative.com/logo.png",
+  "email": "Brian@chalantcreative.com",
+  "telephone": "+12148082189",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "4312 Munger Ave",
+    "addressLocality": "Dallas",
+    "addressRegion": "TX",
+    "postalCode": "75204",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Dallas–Fort Worth" },
+    { "@type": "City", "name": "Dallas" },
+    { "@type": "City", "name": "Fort Worth" },
+    { "@type": "City", "name": "Plano" },
+    { "@type": "City", "name": "Frisco" },
+    { "@type": "City", "name": "Carrollton" },
+    { "@type": "City", "name": "Addison" },
+    { "@type": "City", "name": "Irving" }
+  ],
+  "knowsAbout": [
+    "Social media management",
+    "Organic social media",
+    "Content creation",
+    "Community management",
+    "Hospitality marketing"
+  ],
+  "sameAs": [
+    "https://www.instagram.com/chalant_agency/"
+  ],
+  "description": "CHALANT is a Dallas–Fort Worth social media agency. Campaign strategy, content creation, and community management, without paid ads."
+}
+</script>
+<link rel="icon" href="favicon.png?v=launch1">
+<link rel="apple-touch-icon" href="favicon.png?v=launch1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;1,14..32,400&family=Montserrat:wght@500;600;700&family=Playfair+Display:wght@500;600;700&display=swap">
@@ -26,8 +77,18 @@
     --montserrat:"Montserrat",Helvetica,Arial,sans-serif;
     --inter:"Inter",Helvetica,Arial,sans-serif;
     --ink:#0a0a0a;
+    --nav-h:56px;
   }
   *{box-sizing:border-box}
+  html{
+    height:auto;
+    min-height:100%;
+    scroll-behavior:smooth;
+    scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top, 0px) + 16px);
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+  }
   html,body{height:auto;min-height:100%}
   body{
     margin:0;
@@ -38,6 +99,7 @@
     -webkit-font-smoothing:antialiased;
     -webkit-text-size-adjust:100%;
     font-family:var(--inter);
+    padding-top:calc(var(--nav-h) + env(safe-area-inset-top, 0px));
   }
 
   /* Shared editorial measure, matching Results */
@@ -45,18 +107,139 @@
   .method__inner,
   .follow__inner,
   .results__inner,
-  .signal__inner,
-  .services__inner{max-width:1180px}
+  .services__inner,
+  .beat__inner,
+  .intro__inner,
+  .included__inner,
+  .footer__inner{max-width:1180px}
   .hero,
   .method,
   .follow,
   .results,
-  .signal,
-  .services{
+  .services,
+  .beat,
+  .intro,
+  .included,
+  .footer{
     padding-left:max(16px,4.5vw,env(safe-area-inset-left,0px));
     padding-right:max(16px,4.5vw,env(safe-area-inset-right,0px));
     color:#fff;
     background:#000;
+  }
+
+  /* ---------- Page nav ---------- */
+  .page-nav{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:200;
+    background:#000;
+    border-bottom:1px solid rgba(232,201,10,.45);
+    padding-top:env(safe-area-inset-top, 0px);
+  }
+  .page-nav__list{
+    display:flex;
+    flex-wrap:nowrap;
+    align-items:center;
+    gap:clamp(1rem,2.4vw,1.75rem);
+    margin:0;
+    padding:0 max(16px,4.5vw);
+    height:var(--nav-h);
+    list-style:none;
+    overflow-x:auto;
+    overflow-y:hidden;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:thin;
+    scrollbar-color:rgba(232,201,10,.45) transparent;
+  }
+  .page-nav__link{
+    display:inline-block;
+    flex:0 0 auto;
+    padding:.2em 0;
+    border:0;
+    border-bottom:1px solid transparent;
+    color:#fff;
+    font-family:var(--montserrat);
+    font-size:clamp(10px,.8vw,12px);
+    font-weight:600;
+    letter-spacing:.16em;
+    text-decoration:none;
+    text-transform:uppercase;
+    line-height:1.2;
+    white-space:nowrap;
+  }
+  .page-nav__link:hover{color:var(--gold)}
+  .page-nav__link[aria-current="location"]{
+    color:var(--gold);
+    border-bottom-color:var(--gold);
+  }
+  .page-nav__link:focus{outline:none}
+  .page-nav__link:focus-visible{
+    outline:2px solid var(--gold);
+    outline-offset:4px;
+  }
+  #mantra,
+  #entertain,
+  #educate,
+  #sell,
+  #architects,
+  #design,
+  #execute,
+  #distribute,
+  #involvement,
+  #evergreen,
+  #case-study,
+  #included,
+  #contact{
+    scroll-margin-top:calc(var(--nav-h) + env(safe-area-inset-top, 0px) + 16px);
+  }
+
+  /* ---------- Footprint beats ---------- */
+  .beat{
+    padding-block:clamp(72px,12vh,160px);
+  }
+  .beat__inner{margin:0 auto;width:100%}
+  .beat__title{
+    margin:0;
+    max-width:16em;
+    color:#fff;
+    font-family:var(--heading);
+    font-size:clamp(44px,6.5vw,96px);
+    font-weight:700;
+    line-height:.95;
+    letter-spacing:-.02em;
+    text-wrap:pretty;
+  }
+  .beat__line{
+    margin:.7em 0 0;
+    max-width:28em;
+    color:var(--gold);
+    font-family:var(--inter);
+    font-size:clamp(17px,1.5vw,24px);
+    font-weight:400;
+    line-height:1.5;
+    letter-spacing:-.011em;
+    text-wrap:pretty;
+  }
+  .beat__bullets{
+    margin:1.2em 0 0;
+    padding:0 0 0 1.15em;
+    max-width:32em;
+    color:#fff;
+    font-family:var(--inter);
+    font-size:clamp(15px,1.2vw,18px);
+    font-weight:400;
+    line-height:1.45;
+    letter-spacing:-.011em;
+  }
+  .beat__bullets li{margin:0 0 .42em}
+  .beat__bullets li::marker{color:var(--gold)}
+  .beat--close{padding-block:clamp(64px,10vh,140px)}
+  .beat__title--close{
+    max-width:18em;
+    color:var(--gold);
+    font-size:clamp(32px,5vw,72px);
   }
 
   /* ---------- Hero: B3 lockup, tape edge to edge, wordmark in-gutter ---------- */
@@ -133,6 +316,7 @@
       min-height:100vh;
       min-height:-webkit-fill-available;
       min-height:100svh;
+      min-height:calc(100svh - var(--nav-h) - env(safe-area-inset-top, 0px));
     }
     .hero__stage{
       width:100%;
@@ -144,7 +328,7 @@
 
   /* ---------- Case study ---------- */
   .results{
-    padding-block:clamp(88px,16vh,200px) clamp(96px,18vh,220px);
+    padding-block:clamp(64px,9vh,112px) clamp(96px,18vh,220px);
   }
   .results__eyebrow{
     margin:0 0 clamp(18px,3vh,32px);
@@ -402,7 +586,7 @@
 
   /* ---------- Evergreen ---------- */
   .follow{
-    padding-block:clamp(88px,16vh,200px);
+    padding-block:clamp(88px,16vh,200px) clamp(36px,6vh,72px);
   }
   .follow__stage{
     position:relative;
@@ -457,102 +641,62 @@
     pointer-events:none;
     overflow:visible;
   }
+  .recycle__loop{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    display:block;
+    overflow:visible;
+  }
+  .recycle__band{
+    fill:none;
+    stroke:#E8C90A;
+    stroke-linecap:butt;
+    stroke-linejoin:miter;
+    stroke-miterlimit:8;
+  }
   .recycle__head{
     position:absolute;
     top:0;left:0;
-    width:52px;
-    height:50px;
     overflow:visible;
     transform-box:border-box;
-    transform-origin:50% 50%;
-    offset-path:path("M200,40 L560,664 L40,664 Z");
-    offset-anchor:50% 50%;
     offset-rotate:auto;
+    offset-anchor:9.756% 50%;
+    offset-path:path("M200,40 L560,664 L40,664 Z");
   }
   .recycle__head svg{
     display:block;
-    width:52px;
-    height:50px;
-    overflow:visible;
-  }
-  @media (min-width:700px){
-    .recycle__head{
-      width:88px;
-      height:85px;
-    }
-    .recycle__head svg{
-      width:88px;
-      height:85px;
-    }
-  }
-  @media (min-width:900px){
-    .recycle__head{
-      width:120px;
-      height:116px;
-    }
-    .recycle__head svg{
-      width:120px;
-      height:116px;
-    }
-  }
-  .recycle__head--1{offset-distance:22.5%}
-  .recycle__head--2{offset-distance:55.833%}
-  .recycle__head--3{offset-distance:89.166%}
-  .recycle__head-shape{fill:#E8C90A}
-
-  /* ---------- Traffic light: NYC-style signal, green until in view, then yellow ---------- */
-  .signal{
-    padding-block:clamp(8px,1.8vh,20px) 0;
-  }
-  .signal__light{
-    display:block;
     width:100%;
-    height:auto;
+    height:100%;
     overflow:visible;
   }
-  .signal__mast{fill:url(#mast-metal);stroke:#0A0A0A;stroke-width:.8}
-  .signal__mast-hi{fill:none;stroke:rgba(255,255,255,.18);stroke-width:1.4;stroke-linecap:round}
-  .signal__backplate{fill:#0B130E;stroke:#1C2A20;stroke-width:1}
-  .signal__housing{fill:url(#housing-paint);stroke:#0A140F;stroke-width:1.2}
-  .signal__housing-lip{fill:#0C1812;stroke:#0A140F;stroke-width:.6}
-  .signal__door{fill:url(#door-paint);stroke:#0D1A12;stroke-width:.9}
-  .signal__seam{stroke:#0A140F;stroke-width:2;stroke-linecap:round}
-  .signal__hanger-bar{fill:#1A1A1A;stroke:#0A0A0A;stroke-width:.6}
-  .signal__hanger-plate,
-  .signal__hanger-foot{fill:#242424;stroke:#0A0A0A;stroke-width:.6}
-  .signal__visor{fill:#0A120E;stroke:#060A07;stroke-width:.8}
-  .signal__visor-lip{stroke:#1A2A20;stroke-width:1.2;fill:none}
-  .signal__tunnel{fill:#050806}
-  .signal__bezel{fill:none;stroke:#1C2C22;stroke-width:2.4}
-  .signal__fresnel circle{fill:none;stroke:rgba(255,255,255,.15);stroke-width:.7}
-  .signal__glint{fill:rgba(255,255,255,.15);stroke:none}
-  .signal__lamp{
-    stroke-width:1.1;
-    transition:fill .4s ease,stroke .4s ease,filter .4s ease;
-  }
-  .signal__lamp--red{fill:#1a0a0a;stroke:rgba(255,80,80,.28)}
-  .signal__lamp--yellow{fill:#141414;stroke:rgba(255,255,255,.28)}
-  .signal__lamp--green{fill:#2EBB5A;stroke:#6EE58A;filter:url(#signal-green-glow)}
-  [data-motion="signal"].is-playing .signal__lamp--green,
-  [data-motion="signal"].is-static .signal__lamp--green{
-    fill:#141414;stroke:rgba(255,255,255,.28);filter:none;
-  }
-  [data-motion="signal"].is-playing .signal__lamp--yellow,
-  [data-motion="signal"].is-static .signal__lamp--yellow{
-    fill:var(--gold);stroke:#F3DE55;filter:url(#signal-yellow-glow);
-  }
+  .recycle__head--1{offset-distance:33.333%}
+  .recycle__head--2{offset-distance:66.667%}
+  .recycle__head--3{offset-distance:0%}
+  .recycle__face{fill:#E8C90A}
   @media (prefers-reduced-motion:reduce){
-    .signal__lamp{transition:none}
-    .signal__lamp--green{fill:#141414;stroke:rgba(255,255,255,.28);filter:none}
-    .signal__lamp--yellow{fill:var(--gold);stroke:#F3DE55;filter:url(#signal-yellow-glow)}
+    .recycle__head--1,
+    .recycle__head--2,
+    .recycle__head--3,
+    .recycle__band{animation:none}
   }
-
 
   /* ---------- Services ---------- */
   .services{
+    position:relative;
     padding-block:clamp(88px,16vh,200px);
     border-top:1px solid #E8C90A;
     border-bottom:1px solid #E8C90A;
+  }
+  .services__jump{
+    position:absolute;
+    top:0;
+    left:0;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    pointer-events:none;
   }
   .services__eyebrow{
     margin:0 0 clamp(18px,3vh,32px);
@@ -565,7 +709,7 @@
   }
   .services__title{
     margin:0;
-    max-width:14em;
+    max-width:18em;
     color:#fff;
     font-family:var(--heading);
     font-size:clamp(44px,6.5vw,96px);
@@ -659,6 +803,28 @@
     line-height:1.1;
     text-wrap:pretty;
   }
+  .services__beat{margin:0 0 .9em}
+  .services__beat-label{
+    margin:0 0 .4em;
+    color:var(--gold);
+    font-family:var(--montserrat);
+    font-size:clamp(11px,.85vw,13px);
+    font-weight:600;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    line-height:1.2;
+  }
+  .services__beat-line{
+    margin:0;
+    max-width:28em;
+    color:#fff;
+    font-family:var(--inter);
+    font-size:clamp(16px,1.4vw,22px);
+    font-weight:400;
+    line-height:1.45;
+    letter-spacing:-.011em;
+    text-wrap:pretty;
+  }
   .services__panel-body{
     margin:0;
     max-width:28em;
@@ -670,6 +836,115 @@
     letter-spacing:-.011em;
     text-wrap:pretty;
   }
+  .services__pane[hidden]{display:none}
+  .services__bullets{
+    margin:1.05em 0 0;
+    padding:0 0 0 1.15em;
+    max-width:32em;
+    color:#fff;
+    font-family:var(--inter);
+    font-size:clamp(15px,1.2vw,18px);
+    font-weight:400;
+    line-height:1.45;
+    letter-spacing:-.011em;
+  }
+  .services__bullets li{margin:0 0 .42em}
+  .services__bullets li::marker{color:var(--gold)}
+  .services__all{margin-top:1.35em;max-width:46em}
+  .services__all-toggle{
+    display:inline-flex;
+    align-items:center;
+    gap:.55em;
+    margin:0;
+    padding:0 0 .28em;
+    border:0;
+    border-bottom:1px solid rgba(232,201,10,.5);
+    background:none;
+    color:var(--gold);
+    font-family:var(--montserrat);
+    font-size:clamp(11px,.85vw,13px);
+    font-weight:600;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    cursor:pointer;
+    line-height:1.2;
+  }
+  .services__all-toggle:focus{outline:none}
+  .services__all-toggle:focus-visible{
+    outline:2px solid var(--gold);
+    outline-offset:4px;
+  }
+  .services__all-toggle-mark{
+    display:inline-block;
+    width:.55em;
+    height:.55em;
+    border-right:1.5px solid currentColor;
+    border-bottom:1.5px solid currentColor;
+    transform:rotate(45deg) translateY(-1px);
+    transition:transform .2s ease;
+  }
+  .services__all-toggle[aria-expanded="true"] .services__all-toggle-mark{
+    transform:rotate(225deg) translateY(-1px);
+  }
+  @media (prefers-reduced-motion:reduce){
+    .services__all-toggle-mark{transition:none}
+  }
+  .services__catalog[hidden]{display:none}
+  .services__catalog{
+    grid-column:1/-1;
+    margin-top:0;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:1.35em 2.25em;
+  }
+  @media (min-width:700px){
+    .services__catalog{grid-template-columns:repeat(2,minmax(0,1fr))}
+  }
+  @media (min-width:1100px){
+    .services__catalog{grid-template-columns:repeat(4,minmax(0,1fr))}
+  }
+  @media (min-width:900px){
+    .services__layout:has(#services-catalog:not([hidden])){align-items:start}
+  }
+  .services__catalog-group{min-width:0}
+  .services__catalog-group h4{
+    margin:0 0 .55em;
+    padding-bottom:.35em;
+    border-bottom:1px solid rgba(232,201,10,.4);
+    color:var(--gold);
+    font-family:var(--montserrat);
+    font-size:clamp(11px,.8vw,12px);
+    font-weight:600;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+  }
+  .services__catalog-group ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+    color:#fff;
+    font-family:var(--inter);
+    font-size:clamp(13px,1.05vw,15px);
+    font-weight:400;
+    line-height:1.4;
+    letter-spacing:-.011em;
+  }
+  .services__catalog-group li{
+    margin:0 0 .48em;
+    padding-left:.9em;
+    position:relative;
+  }
+  .services__catalog-group li::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:.55em;
+    width:.35em;
+    height:.35em;
+    background:var(--gold);
+    border-radius:50%;
+  }
+  .services__panel{min-height:0}
 
   /* ---------- The mantra ---------- */
   .method{
@@ -713,6 +988,10 @@
     letter-spacing:-.02em;
     text-wrap:pretty;
   }
+  .method__title-line{
+    display:block;
+    white-space:nowrap;
+  }
   .method__sub{
     margin:clamp(16px,2.4vh,28px) 0 0;
     max-width:28em;
@@ -736,6 +1015,14 @@
       justify-content:center;
       width:240px;
       min-height:236px;
+    }
+    .method__row--entertain{
+      grid-template-columns:minmax(0,1fr) clamp(300px,34vw,400px);
+    }
+    .method__row--entertain .method__visual{
+      width:auto;
+      max-width:400px;
+      min-height:0;
     }
   }
 
@@ -768,85 +1055,175 @@
     -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 10%,#000 90%,transparent 100%);
     mask-image:linear-gradient(to bottom,transparent 0%,#000 10%,#000 90%,transparent 100%);
   }
-  .slot{
-    --cell:36px;
-    position:absolute;
-    inset:0;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:0;
-    z-index:1;
-  }
-  .slot__col{
+  .slots{
     position:relative;
-    overflow:hidden;
-  }
-  .slot__col + .slot__col{
-    border-left:1px solid rgba(255,255,255,.1);
-  }
-  .slot__reel{
-    position:relative;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    will-change:transform,filter;
-  }
-  .slot__sym{
-    box-sizing:border-box;
-    width:28px;
-    height:var(--cell);
-    flex:0 0 var(--cell);
+    width:min(400px,100%);
+    height:auto;
+    flex:0 0 auto;
     display:flex;
     align-items:center;
     justify-content:center;
+    overflow:visible;
   }
-  .slot__sym i{
-    display:block;
-    font-style:normal;
+  .slots__row{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:3.2%;
+    width:100%;
+    height:auto;
+  }
+  .slots .phone{
+    width:calc((100% - 6.4%) / 3);
+    height:auto;
+    aspect-ratio:128 / 236;
+    flex:0 0 auto;
+  }
+  .slots .phone__screen{
+    top:9.32%;
+    left:7.81%;
+    right:7.81%;
+    bottom:5.93%;
+    border-radius:6.25%;
+    -webkit-mask-image:none;
+    mask-image:none;
+    background:#050505;
+  }
+  .feed{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    container-type:size;
+  }
+  .feed__reel{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    will-change:transform;
+  }
+  .post{
     box-sizing:border-box;
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    height:var(--cell,100cqh);
+    flex:0 0 var(--cell,100cqh);
+    padding:7.5% 8% 6.5%;
+    color:rgba(255,255,255,.7);
   }
-  .slot__sym--box i{
-    width:16px;
-    height:12px;
+  .post__head{
+    display:flex;
+    align-items:center;
+    gap:7%;
+    flex:0 0 11%;
+  }
+  .post__avatar{
+    box-sizing:border-box;
+    width:13.5%;
+    aspect-ratio:1;
+    flex:0 0 auto;
     border:1px solid rgba(255,255,255,.5);
-    border-radius:2px;
-  }
-  .slot__sym--bar i{
-    width:14px;
-    height:1px;
-    background:rgba(255,255,255,.52);
-  }
-  .slot__sym--dot i{
-    width:5px;
-    height:5px;
-    border:1px solid rgba(255,255,255,.55);
     border-radius:50%;
   }
-  .slot__sym--bars i{
-    width:10px;
-    height:8px;
-    border-top:1px solid rgba(255,255,255,.5);
-    border-bottom:1px solid rgba(255,255,255,.5);
+  .post__handle{
+    width:46%;
+    height:1.5px;
+    border-radius:1px;
+    background:rgba(255,255,255,.42);
   }
-  .slot__sym--hit i{
-    width:16px;
-    height:16px;
-    border:none;
+  .post--a .post__handle{width:38%}
+  .post--b .post__handle{width:54%}
+  .post--c .post__handle{width:30%}
+  .post--bars .post__handle{width:44%}
+  .post--frame .post__handle{width:50%}
+  .post__image{
+    position:relative;
+    flex:1 1 auto;
+    min-height:0;
+    margin:6.5% 0 6%;
+    border:1px solid rgba(255,255,255,.4);
     border-radius:2px;
-    background:#E8C90A;
-    box-shadow:0 0 8px rgba(232,201,10,.4);
+    overflow:hidden;
   }
-  .slot__payline{
+  .post--frame .post__image::after{
+    content:"";
     position:absolute;
-    left:6px;
-    right:6px;
-    top:50%;
-    height:0;
-    border-top:1px solid rgba(232,201,10,.22);
-    z-index:2;
+    inset:14%;
+    border:1px solid rgba(255,255,255,.28);
     pointer-events:none;
-    transform:translateY(-0.5px);
   }
+  .post--bars .post__image::after{
+    content:"";
+    position:absolute;
+    left:18%;
+    right:18%;
+    top:46%;
+    height:12%;
+    border-top:1px solid rgba(255,255,255,.32);
+    border-bottom:1px solid rgba(255,255,255,.32);
+    pointer-events:none;
+  }
+  .post--c .post__image::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:18%;
+    aspect-ratio:1;
+    margin:-9% 0 0 -9%;
+    border:1px solid rgba(255,255,255,.3);
+    border-radius:50%;
+    pointer-events:none;
+  }
+  /* feed-hues-v1: muted image fills on non-win posts, varied per reel
+     so vertical and side-by-side neighbors differ. Gold stays on --win only. */
+  .feed__reel--1 .post--a .post__image{background:#567089}
+  .feed__reel--1 .post--frame .post__image{background:#B0745C}
+  .feed__reel--1 .post--bars .post__image{background:#6F8564}
+  .feed__reel--1 .post--b .post__image{background:#7A5370}
+  .feed__reel--1 .post--c .post__image{background:#8A8176}
+  .feed__reel--2 .post--frame .post__image{background:#7A5370}
+  .feed__reel--2 .post--c .post__image{background:#9A4F50}
+  .feed__reel--2 .post--a .post__image{background:#4E555F}
+  .feed__reel--2 .post--bars .post__image{background:#567089}
+  .feed__reel--2 .post--b .post__image{background:#B0745C}
+  .feed__reel--3 .post--bars .post__image{background:#8A8176}
+  .feed__reel--3 .post--b .post__image{background:#567089}
+  .feed__reel--3 .post--frame .post__image{background:#9A4F50}
+  .feed__reel--3 .post--c .post__image{background:#6F8564}
+  .feed__reel--3 .post--a .post__image{background:#7A5370}
+  .post--win .post__image{
+    background:#E8C90A;
+    border-color:#E8C90A;
+    box-shadow:0 0 12px rgba(232,201,10,.45);
+  }
+  .post--win .post__image::after{content:none}
+  .post__actions{
+    display:flex;
+    align-items:center;
+    gap:9%;
+    flex:0 0 10%;
+  }
+  .post__ico{
+    display:block;
+    width:15%;
+    max-width:18px;
+    aspect-ratio:1;
+    flex:0 0 auto;
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:contain;
+  }
+  .post__ico--like{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='rgba(255,255,255,0.7)' stroke-width='1.25' stroke-linejoin='round'%3E%3Cpath d='M8 13.2S2.2 9.4 2.2 5.8A3.1 3.1 0 0 1 8 4.4 3.1 3.1 0 0 1 13.8 5.8C13.8 9.4 8 13.2 8 13.2z'/%3E%3C/svg%3E")}
+  .post__ico--cmt{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='rgba(255,255,255,0.7)' stroke-width='1.25' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M3.3 3.6h9.4c.7 0 1.3.6 1.3 1.3v5.1c0 .7-.6 1.3-1.3 1.3H7.1L4.2 13.3v-2H3.3c-.7 0-1.3-.6-1.3-1.3V4.9c0-.7.6-1.3 1.3-1.3z'/%3E%3C/svg%3E")}
+  .post__ico--sh{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='rgba(255,255,255,0.7)' stroke-width='1.25' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M3 8h9.2M8.8 4.6 13.2 8 8.8 11.4'/%3E%3C/svg%3E")}
+  .slots .slot__flash{
+    z-index:4;
+    border-radius:8px;
+  }
+  .slots .slot__win{z-index:6}
+
   .slot__flash{
     position:absolute;
     inset:0;
@@ -917,11 +1294,31 @@
     transform-box:fill-box;
     transform-origin:50% 0%;
   }
-  /* Static / reduced-motion: mid-stride, facing right */
+  /* Static / reduced-motion: teacher mid-stride; followers cheering, heads up */
   .walker__leg--l{transform:rotate(26deg)}
   .walker__leg--r{transform:rotate(-26deg)}
   .walker__arm--l{transform:rotate(-22deg)}
   .walker__arm--r{transform:rotate(22deg)}
+  .crowd__fig .walker__arm--cheer-l,
+  .crowd__fig .walker__arm--cheer-r{
+    transform-box:fill-box;
+  }
+  /* Pivot at the shoulder: far arm reaches up-left, near arm up-right. */
+  .crowd__fig .walker__arm--cheer-l{transform-origin:100% 100%}
+  .crowd__fig .walker__arm--cheer-r{transform-origin:0% 100%}
+  .crowd__fig .walker__head circle{
+    fill:#000;
+    fill-opacity:1;
+    stroke:currentColor;
+  }
+  .crowd__fig .walker__head path{fill:none}
+  .crowd__spark{
+    fill:#E8C90A;
+    stroke:none;
+    opacity:.85;
+    transform-box:fill-box;
+    transform-origin:center;
+  }
   .walker__phone-body{
     fill:#000;
     stroke:currentColor;
@@ -1027,96 +1424,88 @@
     transform-origin:center;
   }
 
-  /* Final / reduced-motion defaults: the landed state */
-  .slot__reel{transform:translate3d(0,var(--lock),0)}
-  .slot__payline{border-top-color:rgba(232,201,10,.7); box-shadow:0 0 10px rgba(232,201,10,.28)}
-
+  /* Reduced-motion / final: feeds landed on the gold post.
+     Motion: rAF sets transform from absolute time; no CSS animation
+     and no transition on the track, so WebKit cannot restart from 0. */
+  .feed__reel{transition:none;animation:none}
+  @media (prefers-reduced-motion:reduce){
+    .feed__reel{transform:translate3d(0,calc(-4 * var(--cell, 100cqh)),0)}
+    [data-motion="entertain"] .slot__flash{opacity:.18}
+  }
   @media (prefers-reduced-motion:no-preference){
-    .slot__payline{border-top-color:rgba(232,201,10,.45); box-shadow:none}
     .tap__phone{transform:translate(-36px,8px) rotate(-8deg)}
     .tap__paid{opacity:0}
     .tap__wave{stroke:rgba(255,255,255,.45)}
     .tap__waves-mark{transform:scale(.92);opacity:.55}
+    .crowd__spark{opacity:0}
 
-    [data-motion].is-playing .slot__reel--1{animation:slot-jackpot-1 5.4s infinite;animation-delay:-1.2s}
-    [data-motion].is-playing .slot__reel--2{animation:slot-jackpot-2 5.4s infinite;animation-delay:-1.2s}
-    [data-motion].is-playing .slot__reel--3{animation:slot-jackpot-3 5.4s infinite;animation-delay:-1.2s}
-    [data-motion].is-playing .slot__payline{animation:slot-jackpot-line 5.4s infinite;animation-delay:-1.2s}
-    [data-motion].is-playing .slot__flash{animation:slot-jackpot-flash 5.4s infinite;animation-delay:-1.2s}
-    [data-motion].is-playing .slot__coin--1{animation:slot-coin-1 5.4s infinite;animation-delay:-1.2s}
-    [data-motion].is-playing .slot__coin--2{animation:slot-coin-2 5.4s infinite;animation-delay:-1.2s}
-    [data-motion].is-playing .slot__coin--3{animation:slot-coin-3 5.4s infinite;animation-delay:-1.2s}
-    [data-motion].is-playing .slot__coin--4{animation:slot-coin-4 5.4s infinite;animation-delay:-1.2s}
-    [data-motion].is-playing .slot__coin--5{animation:slot-coin-5 5.4s infinite;animation-delay:-1.2s}
-    [data-motion].is-playing .slot__coin--6{animation:slot-coin-6 5.4s infinite;animation-delay:-1.2s}
+    [data-motion="entertain"].is-landed .feed__reel{transform:translate3d(0,calc(-4 * var(--cell, 100cqh)),0)}
+    [data-motion="entertain"].is-landed .slot__flash{animation:feed-flash .7s ease-out forwards}
+    [data-motion="entertain"].is-landed .slot__coin--1{animation:slot-coin-1 .7s ease-out both}
+    [data-motion="entertain"].is-landed .slot__coin--2{animation:slot-coin-2 .7s ease-out both}
+    [data-motion="entertain"].is-landed .slot__coin--3{animation:slot-coin-3 .72s ease-out both}
+    [data-motion="entertain"].is-landed .slot__coin--4{animation:slot-coin-4 .72s ease-out both}
+    [data-motion="entertain"].is-landed .slot__coin--5{animation:slot-coin-5 .74s ease-out both}
+    [data-motion="entertain"].is-landed .slot__coin--6{animation:slot-coin-6 .74s ease-out both}
 
     [data-motion].is-playing .crowd__halo{animation:crowd-halo 3.2s ease-in-out infinite}
-    [data-motion].is-playing .walker__bob{animation:walk-bob .7s ease-in-out var(--delay,0s) infinite}
-    [data-motion].is-playing .walker__leg--l{animation:walk-leg-l .7s ease-in-out var(--delay,0s) infinite}
-    [data-motion].is-playing .walker__leg--r{animation:walk-leg-r .7s ease-in-out var(--delay,0s) infinite}
-    [data-motion].is-playing .walker__arm--l{animation:walk-arm-l .7s ease-in-out var(--delay,0s) infinite}
-    [data-motion].is-playing .walker__arm--r{animation:walk-arm-r .7s ease-in-out var(--delay,0s) infinite}
+    [data-motion].is-playing .crowd__teacher .walker__bob{animation:walk-bob .7s ease-in-out var(--delay,0s) infinite}
+    [data-motion].is-playing .crowd__teacher .walker__leg--l{animation:walk-leg-l .7s ease-in-out var(--delay,0s) infinite}
+    [data-motion].is-playing .crowd__teacher .walker__leg--r{animation:walk-leg-r .7s ease-in-out var(--delay,0s) infinite}
+    [data-motion].is-playing .crowd__teacher .walker__arm--l{animation:walk-arm-l .7s ease-in-out var(--delay,0s) infinite}
+    [data-motion].is-playing .crowd__teacher .walker__arm--r{animation:walk-arm-r .7s ease-in-out var(--delay,0s) infinite}
+    [data-motion].is-playing .crowd__fig .walker__bob{animation:cheer-bob .7s ease-in-out var(--delay,0s) infinite}
+    [data-motion].is-playing .crowd__fig .walker__arm--cheer-l{animation:cheer-arm-l .7s ease-in-out var(--delay,0s) infinite}
+    [data-motion].is-playing .crowd__fig .walker__arm--cheer-r{animation:cheer-arm-r .7s ease-in-out var(--delay,0s) infinite}
+    [data-motion].is-playing .crowd__spark--1{animation:spark-burst 2.2s ease-out 0s infinite}
+    [data-motion].is-playing .crowd__spark--2{animation:spark-burst 2.4s ease-out .2s infinite}
+    [data-motion].is-playing .crowd__spark--3{animation:spark-burst 2.1s ease-out .45s infinite}
+    [data-motion].is-playing .crowd__spark--4{animation:spark-burst 2.5s ease-out .1s infinite}
+    [data-motion].is-playing .crowd__spark--5{animation:spark-burst 2.3s ease-out .55s infinite}
+    [data-motion].is-playing .crowd__spark--6{animation:spark-burst 2.6s ease-out .3s infinite}
+    [data-motion].is-playing .crowd__spark--7{animation:spark-burst 2.2s ease-out .7s infinite}
+    [data-motion].is-playing .crowd__spark--8{animation:spark-burst 2.4s ease-out .15s infinite}
 
-    [data-motion].is-playing .tap__phone{animation:tap-phone 5s ease-in-out infinite;animation-delay:-1s}
-    [data-motion].is-playing .tap__paid{animation:tap-paid 5s ease-in-out infinite;animation-delay:-1s}
-    [data-motion].is-playing .tap__waves-mark{animation:tap-waves 5s ease-in-out infinite;animation-delay:-1s}
-    [data-motion].is-playing .tap__wave{animation:tap-wave-stroke 5s ease-in-out infinite;animation-delay:-1s}
+    [data-motion].is-playing .tap__phone{animation:tap-phone 2.4s ease-in-out forwards}
+    [data-motion].is-playing .tap__paid{animation:tap-paid 2.4s ease-in-out forwards}
+    [data-motion].is-playing .tap__waves-mark{animation:tap-waves 2.4s ease-in-out forwards}
+    [data-motion].is-playing .tap__wave{animation:tap-wave-stroke 2.4s ease-in-out forwards}
 
-    @keyframes slot-jackpot-1{
-      0%{transform:translate3d(0,var(--lock),0);animation-timing-function:cubic-bezier(.4,0,1,.4)}
-      42.6%{transform:translate3d(0,calc(var(--lock) - 4 * var(--loop)),0);animation-timing-function:cubic-bezier(.05,.7,.15,1)}
-      50%,100%{transform:translate3d(0,calc(var(--lock) - 5 * var(--loop)),0)}
-    }
-    @keyframes slot-jackpot-2{
-      0%{transform:translate3d(0,var(--lock),0);animation-timing-function:cubic-bezier(.4,0,1,.4)}
-      54.6%{transform:translate3d(0,calc(var(--lock) - 5 * var(--loop)),0);animation-timing-function:cubic-bezier(.05,.7,.15,1)}
-      62%,100%{transform:translate3d(0,calc(var(--lock) - 6 * var(--loop)),0)}
-    }
-    @keyframes slot-jackpot-3{
-      0%{transform:translate3d(0,var(--lock),0);animation-timing-function:cubic-bezier(.4,0,1,.4)}
-      66.7%{transform:translate3d(0,calc(var(--lock) - 6 * var(--loop)),0);animation-timing-function:cubic-bezier(.05,.7,.15,1)}
-      77.8%,100%{transform:translate3d(0,calc(var(--lock) - 7 * var(--loop)),0)}
-    }
-    @keyframes slot-jackpot-line{
-      0%,77.8%{border-top-color:rgba(232,201,10,.28);box-shadow:none}
-      80%,90%{border-top-color:#E8C90A;box-shadow:0 0 14px rgba(232,201,10,.9),0 0 4px #E8C90A}
-      100%{border-top-color:rgba(232,201,10,.75);box-shadow:0 0 8px rgba(232,201,10,.45)}
-    }
-    @keyframes slot-jackpot-flash{
-      0%,77.8%{opacity:0}
-      80%{opacity:.65}
-      88%{opacity:.32}
-      100%{opacity:.12}
+    @keyframes feed-flash{
+      0%{opacity:0}
+      20%{opacity:.65}
+      60%{opacity:.3}
+      100%{opacity:.18}
     }
     @keyframes slot-coin-1{
-      0%,77.8%{opacity:0;transform:translate(0,0) scale(.6)}
-      80%{opacity:1;transform:translate(0,0) scale(1)}
-      92%,100%{opacity:0;transform:translate(-16px,-28px) scale(.5)}
+      0%{opacity:0;transform:translate(0,0) scale(.6)}
+      15%{opacity:1;transform:translate(0,0) scale(1)}
+      100%{opacity:0;transform:translate(-16px,-28px) scale(.5)}
     }
     @keyframes slot-coin-2{
-      0%,77.8%{opacity:0;transform:translate(0,0) scale(.6)}
-      80%{opacity:1;transform:translate(0,0) scale(1)}
-      92%,100%{opacity:0;transform:translate(18px,-26px) scale(.5)}
+      0%{opacity:0;transform:translate(0,0) scale(.6)}
+      15%{opacity:1;transform:translate(0,0) scale(1)}
+      100%{opacity:0;transform:translate(18px,-26px) scale(.5)}
     }
     @keyframes slot-coin-3{
-      0%,77.8%{opacity:0;transform:translate(0,0) scale(.6)}
-      81%{opacity:1;transform:translate(0,0) scale(1)}
-      93%,100%{opacity:0;transform:translate(-22px,-10px) scale(.5)}
+      0%{opacity:0;transform:translate(0,0) scale(.6)}
+      18%{opacity:1;transform:translate(0,0) scale(1)}
+      100%{opacity:0;transform:translate(-22px,-10px) scale(.5)}
     }
     @keyframes slot-coin-4{
-      0%,77.8%{opacity:0;transform:translate(0,0) scale(.6)}
-      81%{opacity:1;transform:translate(0,0) scale(1)}
-      93%,100%{opacity:0;transform:translate(22px,-8px) scale(.5)}
+      0%{opacity:0;transform:translate(0,0) scale(.6)}
+      18%{opacity:1;transform:translate(0,0) scale(1)}
+      100%{opacity:0;transform:translate(22px,-8px) scale(.5)}
     }
     @keyframes slot-coin-5{
-      0%,77.8%{opacity:0;transform:translate(0,0) scale(.6)}
-      82%{opacity:1;transform:translate(0,0) scale(1)}
-      94%,100%{opacity:0;transform:translate(-10px,22px) scale(.45)}
+      0%{opacity:0;transform:translate(0,0) scale(.6)}
+      20%{opacity:1;transform:translate(0,0) scale(1)}
+      100%{opacity:0;transform:translate(-10px,22px) scale(.45)}
     }
     @keyframes slot-coin-6{
-      0%,77.8%{opacity:0;transform:translate(0,0) scale(.6)}
-      82%{opacity:1;transform:translate(0,0) scale(1)}
-      94%,100%{opacity:0;transform:translate(12px,20px) scale(.45)}
+      0%{opacity:0;transform:translate(0,0) scale(.6)}
+      20%{opacity:1;transform:translate(0,0) scale(1)}
+      100%{opacity:0;transform:translate(12px,20px) scale(.45)}
     }
     @keyframes crowd-halo{
       0%,100%{opacity:.8;transform:scale(1)}
@@ -1142,60 +1531,249 @@
       0%,100%{transform:rotate(22deg)}
       50%{transform:rotate(-22deg)}
     }
+    @keyframes cheer-bob{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-2.2px)}
+    }
+    @keyframes cheer-arm-l{
+      0%,100%{transform:rotate(-8deg)}
+      50%{transform:rotate(12deg)}
+    }
+    @keyframes cheer-arm-r{
+      0%,100%{transform:rotate(8deg)}
+      50%{transform:rotate(-12deg)}
+    }
+    @keyframes spark-burst{
+      0%{opacity:0;transform:translate(0,10px) scale(.35)}
+      18%{opacity:1;transform:translate(var(--sx,4px),-6px) scale(1)}
+      70%,100%{opacity:0;transform:translate(var(--sx,8px),-26px) scale(.25)}
+    }
     @keyframes tap-phone{
-      0%,8%{transform:translate(-36px,8px) rotate(-8deg)}
-      28%{transform:translate(-6px,2px) rotate(6deg)}
-      32%{transform:translate(-2px,3px) rotate(7deg)}
-      36%,66%{transform:translate(0,4px) rotate(8deg)}
-      80%,100%{transform:translate(-36px,8px) rotate(-8deg)}
+      0%,16.7%{transform:translate(-36px,8px) rotate(-8deg)}
+      58.3%{transform:translate(-6px,2px) rotate(6deg)}
+      66.7%{transform:translate(-2px,3px) rotate(7deg)}
+      75%,100%{transform:translate(0,4px) rotate(8deg)}
     }
     @keyframes tap-paid{
-      0%,38%{opacity:0}
-      44%,66%{opacity:1}
-      74%,100%{opacity:0}
+      0%,79%{opacity:0}
+      91.7%,100%{opacity:1}
     }
     @keyframes tap-waves{
-      0%,22%{transform:scale(.92);opacity:.5}
-      30%{transform:scale(1.08);opacity:1}
-      36%{transform:scale(.98);opacity:.85}
-      42%{transform:scale(1.12);opacity:1}
-      50%,66%{transform:scale(1.04);opacity:.9}
-      80%,100%{transform:scale(.92);opacity:.5}
+      0%,45.8%{transform:scale(.92);opacity:.5}
+      62.5%{transform:scale(1.08);opacity:1}
+      75%{transform:scale(.98);opacity:.85}
+      87.5%{transform:scale(1.12);opacity:1}
+      100%{transform:scale(1.04);opacity:.9}
     }
     @keyframes tap-wave-stroke{
-      0%,24%{stroke:rgba(255,255,255,.45)}
-      30%,66%{stroke:#E8C90A}
-      80%,100%{stroke:rgba(255,255,255,.45)}
+      0%,50%{stroke:rgba(255,255,255,.45)}
+      62.5%,100%{stroke:#E8C90A}
     }
-    [data-motion].is-playing .recycle__head--1{animation:recycle-snake-head-1 9s linear infinite}
-    [data-motion].is-playing .recycle__head--2{animation:recycle-snake-head-2 9s linear infinite}
-    [data-motion].is-playing .recycle__head--3{animation:recycle-snake-head-3 9s linear infinite}
-    @keyframes recycle-snake-head-1{
-      from{offset-distance:22.5%;offset-rotate:auto}
-      to{offset-distance:122.5%;offset-rotate:auto}
-    }
-    @keyframes recycle-snake-head-2{
-      from{offset-distance:55.833%;offset-rotate:auto}
-      to{offset-distance:155.833%;offset-rotate:auto}
-    }
-    @keyframes recycle-snake-head-3{
-      from{offset-distance:89.166%;offset-rotate:auto}
-      to{offset-distance:189.166%;offset-rotate:auto}
-    }
+  }
+
+  /* ---------- Intro H1 ---------- */
+  .intro{
+    padding-block:clamp(48px,8vh,88px) clamp(32px,5vh,56px);
+  }
+  .intro__inner{width:100%}
+  .intro__title{
+    margin:0;
+    max-width:18em;
+    color:#fff;
+    font-family:var(--heading);
+    font-size:clamp(28px,4.2vw,56px);
+    font-weight:700;
+    line-height:1.05;
+    letter-spacing:-.02em;
+    text-wrap:pretty;
+  }
+
+  /* ---------- What's included ---------- */
+  .included{
+    padding-block:clamp(72px,12vh,160px);
+  }
+  .included__inner{width:100%}
+  .included__eyebrow{
+    margin:0 0 clamp(18px,3vh,32px);
+    color:var(--gold);
+    font-family:var(--montserrat);
+    font-size:clamp(11px,.85vw,13px);
+    font-weight:600;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+  }
+  .included__title{
+    margin:0;
+    max-width:16em;
+    color:#fff;
+    font-family:var(--heading);
+    font-size:clamp(44px,6.5vw,96px);
+    font-weight:700;
+    line-height:.95;
+    letter-spacing:-.02em;
+    text-wrap:pretty;
+  }
+  .included__lede{
+    margin:clamp(24px,4vh,40px) 0 0;
+    max-width:34em;
+    color:#fff;
+    font-family:var(--inter);
+    font-size:clamp(18px,1.55vw,24px);
+    font-weight:400;
+    line-height:1.5;
+    letter-spacing:-.011em;
+    text-wrap:pretty;
+  }
+  .included__grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:1.6em 2.25em;
+    margin-top:clamp(48px,8vh,80px);
+  }
+  @media (min-width:700px){
+    .included__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  }
+  @media (min-width:1100px){
+    .included__grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  }
+  .included__group{min-width:0}
+  .included__group h3{
+    margin:0 0 .55em;
+    padding-bottom:.35em;
+    border-bottom:1px solid rgba(232,201,10,.4);
+    color:var(--gold);
+    font-family:var(--montserrat);
+    font-size:clamp(11px,.8vw,12px);
+    font-weight:600;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+  }
+  .included__group ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+    color:#fff;
+    font-family:var(--inter);
+    font-size:clamp(13px,1.05vw,15px);
+    font-weight:400;
+    line-height:1.4;
+    letter-spacing:-.011em;
+  }
+  .included__group li{
+    margin:0 0 .48em;
+    padding-left:.9em;
+    position:relative;
+  }
+  .included__group li::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:.55em;
+    width:.35em;
+    height:.35em;
+    background:var(--gold);
+    border-radius:50%;
+  }
+
+  /* ---------- Footer contact ---------- */
+  .footer{
+    padding-block:clamp(64px,10vh,120px) clamp(48px,8vh,88px);
+    border-top:1px solid rgba(232,201,10,.45);
+  }
+  .footer__inner{width:100%}
+  .footer__eyebrow{
+    margin:0 0 clamp(18px,3vh,32px);
+    color:var(--gold);
+    font-family:var(--montserrat);
+    font-size:clamp(11px,.85vw,13px);
+    font-weight:600;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+  }
+  .footer__title{
+    margin:0;
+    color:#fff;
+    font-family:var(--heading);
+    font-size:clamp(44px,6.5vw,96px);
+    font-weight:700;
+    line-height:.95;
+    letter-spacing:-.02em;
+  }
+  .footer__area{
+    margin:clamp(16px,2.4vh,28px) 0 0;
+    color:var(--gold);
+    font-family:var(--montserrat);
+    font-size:clamp(11px,.85vw,13px);
+    font-weight:600;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+  }
+  .footer__address{
+    margin:clamp(28px,4vh,48px) 0 0;
+    font-style:normal;
+    font-family:var(--inter);
+    font-size:clamp(16px,1.25vw,20px);
+    font-weight:400;
+    line-height:1.5;
+    letter-spacing:-.011em;
+  }
+  .footer__list{
+    margin:clamp(20px,3vh,32px) 0 0;
+    padding:0;
+    list-style:none;
+    font-family:var(--inter);
+    font-size:clamp(16px,1.25vw,20px);
+    font-weight:400;
+    line-height:1.6;
+    letter-spacing:-.011em;
+  }
+  .footer__list li{margin:0 0 .25em}
+  .footer a{
+    color:#fff;
+    text-decoration:none;
+    border-bottom:1px solid rgba(232,201,10,.45);
+  }
+  .footer a:hover{color:var(--gold)}
+  .footer a:focus{outline:none}
+  .footer a:focus-visible{
+    outline:2px solid var(--gold);
+    outline-offset:4px;
+  }
+  .footer__hours{
+    margin:clamp(20px,3vh,32px) 0 0;
+    color:rgba(255,255,255,.84);
+    font-family:var(--inter);
+    font-size:clamp(16px,1.25vw,20px);
+    font-weight:400;
+    line-height:1.5;
+    letter-spacing:-.011em;
   }
 </style>
 </head>
 <body>
+  <nav class="page-nav" aria-label="On this page">
+    <ul class="page-nav__list">
+      <li><a class="page-nav__link" href="#mantra">The mantra</a></li>
+      <li><a class="page-nav__link" href="#architects">Services</a></li>
+      <li><a class="page-nav__link" href="#case-study">Case study</a></li>
+    </ul>
+  </nav>
   <main>
     <section class="hero" id="top" aria-label="CHALANT CREATIVE">
       <div class="hero__stage">
         <div class="hero__lockup">
-          <img class="hero__tape" src="tape-b3.svg" alt="" width="8000" height="900" aria-hidden="true">
+          <img class="hero__tape" src="tape-b3.svg?v=launch1" alt="" width="8000" height="900" aria-hidden="true">
           <picture>
-            <source srcset="wordmark.svg" type="image/svg+xml">
-            <img class="hero__logo" src="wordmark.png" alt="CHALANT CREATIVE" width="1370" height="468">
+            <source srcset="wordmark.svg?v=launch1" type="image/svg+xml">
+            <img class="hero__logo" src="wordmark.png?v=launch1" alt="CHALANT CREATIVE" width="1370" height="468">
           </picture>
         </div>
+      </div>
+    </section>
+
+    <section class="intro" aria-labelledby="page-heading">
+      <div class="intro__inner">
+        <h1 class="intro__title" id="page-heading">Organic social media management in Dallas–Fort Worth</h1>
       </div>
     </section>
 
@@ -1203,23 +1781,50 @@
       <div class="method__inner">
         <h2 class="method__eyebrow" id="mantra-heading" data-animate>The mantra</h2>
         <div class="method__list">
-          <article class="method__row" data-animate>
+          <article class="method__row method__row--entertain" id="entertain" data-animate>
             <div class="method__copy">
-              <h3 class="method__title">Entertain<br>the masses</h3>
+              <h3 class="method__title" aria-label="Entertain the masses">
+              <span class="method__title-line">Entertain</span>
+              <span class="method__title-line">the masses</span>
+            </h3>
               <p class="method__sub">Content engineered to stop the scroll.</p>
             </div>
-            <div class="method__visual" data-motion="entertain" aria-hidden="true">
-              <div class="phone">
-                <svg class="phone__shell" viewBox="0 0 128 236" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div class="method__visual" data-motion="entertain" aria-hidden="true">
+              <div class="slots"><!-- slot-raf-v1 feed-hues-v1 no-payline-v1 -->
+                <div class="slots__row">
+                <div class="phone">
+                  <svg class="phone__shell" viewBox="0 0 128 236" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect x="1.25" y="1.25" width="125.5" height="233.5" rx="26" stroke="rgba(255,255,255,0.42)" stroke-width="1.25"/>
                   <rect x="48" y="10" width="32" height="5" rx="2.5" fill="rgba(255,255,255,0.35)"/>
                 </svg>
-                <div class="phone__screen">
-                  <div class="slot"><!-- slot-jackpot-v2 -->
-                    <div class="slot__col"><div class="slot__reel slot__reel--1" style="--lock:-422px;--loop:720px"><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--hit"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--hit"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--hit"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--hit"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--hit"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--hit"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--hit"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--hit"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span></div></div>
-                    <div class="slot__col"><div class="slot__reel slot__reel--2" style="--lock:-422px;--loop:720px"><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--hit"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--hit"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--hit"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--hit"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--hit"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--hit"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--hit"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--hit"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span></div></div>
-                    <div class="slot__col"><div class="slot__reel slot__reel--3" style="--lock:-422px;--loop:720px"><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--hit"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--hit"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--hit"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--hit"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--hit"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--hit"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--hit"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--hit"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bars"><i></i></span><span class="slot__sym slot__sym--box"><i></i></span><span class="slot__sym slot__sym--dot"><i></i></span><span class="slot__sym slot__sym--bar"><i></i></span></div></div>
-                  <div class="slot__payline"></div>
+                  <div class="phone__screen">
+                    <div class="feed">
+                      <div class="feed__reel feed__reel--1"><article class="post post--a"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--frame"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--bars"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--b"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--win"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--c"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--a"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--frame"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--bars"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--b"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--win"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--c"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--a"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--frame"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--bars"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--b"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--win"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--c"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--a"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--frame"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--bars"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--b"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--win"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--c"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="phone">
+                  <svg class="phone__shell" viewBox="0 0 128 236" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="1.25" y="1.25" width="125.5" height="233.5" rx="26" stroke="rgba(255,255,255,0.42)" stroke-width="1.25"/>
+                  <rect x="48" y="10" width="32" height="5" rx="2.5" fill="rgba(255,255,255,0.35)"/>
+                </svg>
+                  <div class="phone__screen">
+                    <div class="feed">
+                      <div class="feed__reel feed__reel--2"><article class="post post--frame"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--c"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--a"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--bars"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--win"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--b"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--frame"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--c"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--a"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--bars"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--win"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--b"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--frame"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--c"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--a"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--bars"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--win"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--b"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--frame"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--c"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--a"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--bars"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--win"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--b"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="phone">
+                  <svg class="phone__shell" viewBox="0 0 128 236" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="1.25" y="1.25" width="125.5" height="233.5" rx="26" stroke="rgba(255,255,255,0.42)" stroke-width="1.25"/>
+                  <rect x="48" y="10" width="32" height="5" rx="2.5" fill="rgba(255,255,255,0.35)"/>
+                </svg>
+                  <div class="phone__screen">
+                    <div class="feed">
+                      <div class="feed__reel feed__reel--3"><article class="post post--bars"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--b"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--frame"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--c"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--win"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--a"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--bars"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--b"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--frame"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--c"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--win"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--a"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--bars"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--b"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--frame"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--c"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--win"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--a"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--bars"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--b"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--frame"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--c"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--win"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article><article class="post post--a"><div class="post__head"><span class="post__avatar"></span><span class="post__handle"></span></div><div class="post__image"></div><div class="post__actions"><i class="post__ico post__ico--like"></i><i class="post__ico post__ico--cmt"></i><i class="post__ico post__ico--sh"></i></div></article></div>
+                    </div>
+                  </div>
+                </div>
                   <div class="slot__flash"></div>
                   <div class="slot__win" aria-hidden="true">
                     <span class="slot__coin slot__coin--1"></span>
@@ -1233,9 +1838,12 @@
               </div>
             </div>
           </article>
-          <article class="method__row" data-animate>
+          <article class="method__row" id="educate" data-animate>
             <div class="method__copy">
-              <h3 class="method__title">Educate the<br>interested</h3>
+              <h3 class="method__title" aria-label="Educate the interested">
+              <span class="method__title-line">Educate</span>
+              <span class="method__title-line">the interested</span>
+            </h3>
               <p class="method__sub">Reward them for watching and they will follow.</p>
             </div>
                                     <div class="method__visual" data-motion="educate" aria-hidden="true">
@@ -1265,102 +1873,90 @@
                       <path class="walker__leg walker__leg--r" d="M0 10.2 L0 16.5"/>
                     </g>
                   </g></g>
+                <g class="crowd__confetti"><!-- educate-cheer-v3 -->
+                  <circle class="crowd__spark crowd__spark--1" cx="46" cy="96" r="1.7" style="--sx:6px"/>
+                  <circle class="crowd__spark crowd__spark--2" cx="78" cy="84" r="1.3" style="--sx:-5px"/>
+                  <circle class="crowd__spark crowd__spark--3" cx="110" cy="100" r="1.8" style="--sx:8px"/>
+                  <circle class="crowd__spark crowd__spark--4" cx="62" cy="70" r="1.2" style="--sx:-7px"/>
+                  <rect class="crowd__spark crowd__spark--5" x="132" y="88" width="2.2" height="2.2" transform="rotate(20 133.1 89.1)" style="--sx:5px"/>
+                  <circle class="crowd__spark crowd__spark--6" cx="96" cy="64" r="1.4" style="--sx:-4px"/>
+                  <rect class="crowd__spark crowd__spark--7" x="40" y="74" width="1.8" height="1.8" transform="rotate(35 40.9 74.9)" style="--sx:9px"/>
+                  <circle class="crowd__spark crowd__spark--8" cx="148" cy="78" r="1.5" style="--sx:-6px"/>
+                </g>
                 <g class="crowd__fig" style="--delay:0.1s" transform="translate(28 118) scale(3.5)"><g class="walker" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
                     <g class="walker__bob">
-                      <path class="walker__arm walker__arm--l" d="M1.0 5.4 L1.0 11.0"/>
+                      <g transform="translate(1 5.4)"><g class="walker__arm walker__arm--cheer-l"><path d="M0 0 L-0.7 -6.6" fill="none"/></g></g>
                       <path class="walker__leg walker__leg--l" d="M0 10.2 L0 16.5"/>
                       <path d="M1.4 4.55 L0 10.2"/>
-                      <ellipse class="walker__face-glow" cx="4.7" cy="5.15" rx="2.8" ry="2.4"/>
-                      <g class="walker__head" transform="rotate(55 2.15 4.52)">
-                        <circle cx="2.6" cy="2.3" r="2.35"/>
-                        <path d="M4.88 2.40 L6.25 3.35"/>
+                      <g class="walker__head">
+                        <circle cx="2.6" cy="2.3" r="2.35" fill="#000" stroke="currentColor"/>
+                        <path d="M4.95 2.35 L5.55 2.75" fill="none"/>
                       </g>
-                      <path class="walker__arm-hold" d="M1.0 5.4 Q2.25 8.15 5.6 7.65"/>
-                      <g class="walker__phone" transform="translate(5.45 6.95) rotate(62)">
-                        <rect class="walker__phone-body" x="0" y="0" width="2.1" height="3.6" rx="0.3"/>
-                        <rect class="walker__phone-screen" x="0.28" y="0.32" width="1.54" height="2.6" rx="0.1"/>
-                      </g>
+                      <g transform="translate(1 5.4)"><g class="walker__arm walker__arm--cheer-r"><path d="M0 0 L4.6 -0.1 L5.4 -5.2" fill="none"/></g></g>
                       <path class="walker__leg walker__leg--r" d="M0 10.2 L0 16.5"/>
                     </g>
                   </g></g>
                 <g class="crowd__fig" style="--delay:0.0s" transform="translate(54 110) scale(3.5)"><g class="walker" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
                     <g class="walker__bob">
-                      <path class="walker__arm walker__arm--l" d="M1.0 5.4 L1.0 11.0"/>
+                      <g transform="translate(1 5.4)"><g class="walker__arm walker__arm--cheer-l"><path d="M0 0 L-0.7 -6.6" fill="none"/></g></g>
                       <path class="walker__leg walker__leg--l" d="M0 10.2 L0 16.5"/>
                       <path d="M1.4 4.55 L0 10.2"/>
-                      <ellipse class="walker__face-glow" cx="4.7" cy="5.15" rx="2.8" ry="2.4"/>
-                      <g class="walker__head" transform="rotate(55 2.15 4.52)">
-                        <circle cx="2.6" cy="2.3" r="2.35"/>
-                        <path d="M4.88 2.40 L6.25 3.35"/>
+                      <g class="walker__head">
+                        <circle cx="2.6" cy="2.3" r="2.35" fill="#000" stroke="currentColor"/>
+                        <path d="M4.95 2.35 L5.55 2.75" fill="none"/>
                       </g>
-                      <path class="walker__arm-hold" d="M1.0 5.4 Q2.25 8.15 5.6 7.65"/>
-                      <g class="walker__phone" transform="translate(5.45 6.95) rotate(62)">
-                        <rect class="walker__phone-body" x="0" y="0" width="2.1" height="3.6" rx="0.3"/>
-                        <rect class="walker__phone-screen" x="0.28" y="0.32" width="1.54" height="2.6" rx="0.1"/>
-                      </g>
+                      <g transform="translate(1 5.4)"><g class="walker__arm walker__arm--cheer-r"><path d="M0 0 L4.6 -0.1 L5.4 -5.2" fill="none"/></g></g>
                       <path class="walker__leg walker__leg--r" d="M0 10.2 L0 16.5"/>
                     </g>
                   </g></g>
                 <g class="crowd__fig" style="--delay:0.2s" transform="translate(80 120) scale(3.5)"><g class="walker" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
                     <g class="walker__bob">
-                      <path class="walker__arm walker__arm--l" d="M1.0 5.4 L1.0 11.0"/>
+                      <g transform="translate(1 5.4)"><g class="walker__arm walker__arm--cheer-l"><path d="M0 0 L-0.7 -6.6" fill="none"/></g></g>
                       <path class="walker__leg walker__leg--l" d="M0 10.2 L0 16.5"/>
                       <path d="M1.4 4.55 L0 10.2"/>
-                      <ellipse class="walker__face-glow" cx="4.7" cy="5.15" rx="2.8" ry="2.4"/>
-                      <g class="walker__head" transform="rotate(55 2.15 4.52)">
-                        <circle cx="2.6" cy="2.3" r="2.35"/>
-                        <path d="M4.88 2.40 L6.25 3.35"/>
+                      <g class="walker__head">
+                        <circle cx="2.6" cy="2.3" r="2.35" fill="#000" stroke="currentColor"/>
+                        <path d="M4.95 2.35 L5.55 2.75" fill="none"/>
                       </g>
-                      <path class="walker__arm-hold" d="M1.0 5.4 Q2.25 8.15 5.6 7.65"/>
-                      <g class="walker__phone" transform="translate(5.45 6.95) rotate(62)">
-                        <rect class="walker__phone-body" x="0" y="0" width="2.1" height="3.6" rx="0.3"/>
-                        <rect class="walker__phone-screen" x="0.28" y="0.32" width="1.54" height="2.6" rx="0.1"/>
-                      </g>
+                      <g transform="translate(1 5.4)"><g class="walker__arm walker__arm--cheer-r"><path d="M0 0 L4.6 -0.1 L5.4 -5.2" fill="none"/></g></g>
                       <path class="walker__leg walker__leg--r" d="M0 10.2 L0 16.5"/>
                     </g>
                   </g></g>
                 <g class="crowd__fig" style="--delay:0.08s" transform="translate(106 112) scale(3.5)"><g class="walker" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
                     <g class="walker__bob">
-                      <path class="walker__arm walker__arm--l" d="M1.0 5.4 L1.0 11.0"/>
+                      <g transform="translate(1 5.4)"><g class="walker__arm walker__arm--cheer-l"><path d="M0 0 L-0.7 -6.6" fill="none"/></g></g>
                       <path class="walker__leg walker__leg--l" d="M0 10.2 L0 16.5"/>
                       <path d="M1.4 4.55 L0 10.2"/>
-                      <ellipse class="walker__face-glow" cx="4.7" cy="5.15" rx="2.8" ry="2.4"/>
-                      <g class="walker__head" transform="rotate(55 2.15 4.52)">
-                        <circle cx="2.6" cy="2.3" r="2.35"/>
-                        <path d="M4.88 2.40 L6.25 3.35"/>
+                      <g class="walker__head">
+                        <circle cx="2.6" cy="2.3" r="2.35" fill="#000" stroke="currentColor"/>
+                        <path d="M4.95 2.35 L5.55 2.75" fill="none"/>
                       </g>
-                      <path class="walker__arm-hold" d="M1.0 5.4 Q2.25 8.15 5.6 7.65"/>
-                      <g class="walker__phone" transform="translate(5.45 6.95) rotate(62)">
-                        <rect class="walker__phone-body" x="0" y="0" width="2.1" height="3.6" rx="0.3"/>
-                        <rect class="walker__phone-screen" x="0.28" y="0.32" width="1.54" height="2.6" rx="0.1"/>
-                      </g>
+                      <g transform="translate(1 5.4)"><g class="walker__arm walker__arm--cheer-r"><path d="M0 0 L4.6 -0.1 L5.4 -5.2" fill="none"/></g></g>
                       <path class="walker__leg walker__leg--r" d="M0 10.2 L0 16.5"/>
                     </g>
                   </g></g>
                 <g class="crowd__fig" style="--delay:0.16s" transform="translate(132 117) scale(3.5)"><g class="walker" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
                     <g class="walker__bob">
-                      <path class="walker__arm walker__arm--l" d="M1.0 5.4 L1.0 11.0"/>
+                      <g transform="translate(1 5.4)"><g class="walker__arm walker__arm--cheer-l"><path d="M0 0 L-0.7 -6.6" fill="none"/></g></g>
                       <path class="walker__leg walker__leg--l" d="M0 10.2 L0 16.5"/>
                       <path d="M1.4 4.55 L0 10.2"/>
-                      <ellipse class="walker__face-glow" cx="4.7" cy="5.15" rx="2.8" ry="2.4"/>
-                      <g class="walker__head" transform="rotate(55 2.15 4.52)">
-                        <circle cx="2.6" cy="2.3" r="2.35"/>
-                        <path d="M4.88 2.40 L6.25 3.35"/>
+                      <g class="walker__head">
+                        <circle cx="2.6" cy="2.3" r="2.35" fill="#000" stroke="currentColor"/>
+                        <path d="M4.95 2.35 L5.55 2.75" fill="none"/>
                       </g>
-                      <path class="walker__arm-hold" d="M1.0 5.4 Q2.25 8.15 5.6 7.65"/>
-                      <g class="walker__phone" transform="translate(5.45 6.95) rotate(62)">
-                        <rect class="walker__phone-body" x="0" y="0" width="2.1" height="3.6" rx="0.3"/>
-                        <rect class="walker__phone-screen" x="0.28" y="0.32" width="1.54" height="2.6" rx="0.1"/>
-                      </g>
+                      <g transform="translate(1 5.4)"><g class="walker__arm walker__arm--cheer-r"><path d="M0 0 L4.6 -0.1 L5.4 -5.2" fill="none"/></g></g>
                       <path class="walker__leg walker__leg--r" d="M0 10.2 L0 16.5"/>
                     </g>
                   </g></g>
               </svg>
             </div>
           </article>
-          <article class="method__row" data-animate>
+          <article class="method__row" id="sell" data-animate>
             <div class="method__copy">
-              <h3 class="method__title">Sell the<br>committed</h3>
+              <h3 class="method__title" aria-label="Sell the committed">
+              <span class="method__title-line">Sell</span>
+              <span class="method__title-line">the committed</span>
+            </h3>
               <p class="method__sub">Be the first name they think of when your industry comes up.</p>
             </div>
             <div class="method__visual" data-motion="sell" aria-hidden="true">
@@ -1398,10 +1994,13 @@
     </section>
 
 
-    <section class="services" id="services" aria-labelledby="services-heading">
+    <section class="services" id="architects" aria-labelledby="services-heading">
+      <span id="design" class="services__jump" aria-hidden="true"></span>
+      <span id="execute" class="services__jump" aria-hidden="true"></span>
+      <span id="distribute" class="services__jump" aria-hidden="true"></span>
       <div class="services__inner">
         <p class="services__eyebrow" data-animate>Services</p>
-        <h2 class="services__title" id="services-heading" data-animate>What we do.</h2>
+        <h2 class="services__title" id="services-heading" data-animate>Digital Footprint Architects</h2>
         <div class="services__layout">
           <div class="services__visual">
             <div class="services__chart" data-motion="services" role="radiogroup" aria-label="Areas of service">
@@ -1432,11 +2031,174 @@
               </svg>
             </div>
           </div>
-          <div class="services__panel" id="services-panel" aria-live="polite">
-            <h3 class="services__panel-title">1. Campaign Strategy</h3>
-            <p class="services__panel-body">We address your public relations needs and find the best way to present your business to the market.</p>
+          <div class="services__panel" id="services-panel"><!-- services-list-v1 -->
+            <div class="services__pane is-active" data-service="campaign" role="region" aria-labelledby="service-title-campaign">
+              <h3 class="services__panel-title" id="service-title-campaign">1. Campaign Strategy</h3>
+              <div class="services__beat">
+                <p class="services__beat-label">Design</p>
+              </div>
+              <p class="services__panel-body">We assess your public relations needs and design a campaign to address your specific needs.</p>
+              <ul class="services__bullets">
+                <li>Audit profiles and analyze competitors.</li>
+                <li>Lock voice, visual style, and content pillars.</li>
+                <li>Clean up bios, highlights, and links across platforms.</li>
+                <li>A 12-month organic, no-ad content strategy.</li>
+                <li>Set a baseline and report each month — keep, kill, or add.</li>
+              </ul>
+            </div>
+            <div class="services__pane" data-service="creation" role="region" aria-labelledby="service-title-creation" hidden>
+              <h3 class="services__panel-title" id="service-title-creation">2. Content Creation</h3>
+              <div class="services__beat">
+                <p class="services__beat-label">Execute</p>
+                <p class="services__beat-line">We execute the message.</p>
+              </div>
+              <p class="services__panel-body">We find the style your brand needs: cinematic, documentary, found footage, even goofy. Whatever fits your business.</p>
+            </div>
+            <div class="services__pane" data-service="community" role="region" aria-labelledby="service-title-community" hidden>
+              <h3 class="services__panel-title" id="service-title-community">3. Community Management</h3>
+              <div class="services__beat">
+                <p class="services__beat-label">Distribute &amp; Amplify</p>
+              </div>
+              <p class="services__panel-body">We distribute your content, amplify it organically, reply to DMs, handle Google reviews, comment back on posts, and schedule.</p>
+              <ul class="services__bullets">
+                <li>Set up and tend a Google Business Profile.</li>
+                <li>Write on-page titles, descriptions, and schema.</li>
+                <li>Build a keyword and content plan tied to the social calendar.</li>
+                <li>Keep name, address, and phone consistent across local listings.</li>
+                <li>Report on organic search each month.</li>
+              </ul>
+              <div class="services__all">
+                <button type="button" class="services__all-toggle" id="services-all-toggle" aria-expanded="false" aria-controls="services-catalog">
+                  <span class="services__all-toggle-mark" aria-hidden="true"></span>
+                  All services
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="services__catalog" id="services-catalog" hidden>
+            <div class="services__catalog-group">
+              <h4>Strategy</h4>
+              <ul>
+                <li>Look and tone guidelines</li>
+                <li>Content calendar and posting cadence</li>
+                <li>Event planning against the calendar</li>
+                <li>Creative direction and shot lists for on-site teams</li>
+                <li>Weekly progress reports</li>
+              </ul>
+            </div>
+            <div class="services__catalog-group">
+              <h4>Content</h4>
+              <ul>
+                <li>Feed posts, Reels, and Stories</li>
+                <li>Documentary-style and short-form video</li>
+                <li>On-site photography and videography</li>
+                <li>On-site film crew and writers’ room, as scoped</li>
+                <li>Serialized, episode-style content</li>
+                <li>Staff and interview features</li>
+                <li>Editing, captions, and scheduling</li>
+                <li>Guest and customer content, reshared with permission</li>
+                <li>Cross-posting to Facebook, TikTok, and YouTube Shorts</li>
+                <li>Google Business Profile content</li>
+                <li>Website or landing-page refresh, when scoped</li>
+                <li>Clipping campaigns, after the first 90 days</li>
+              </ul>
+            </div>
+            <div class="services__catalog-group">
+              <h4>Community</h4>
+              <ul>
+                <li>DMs and public replies during business hours</li>
+                <li>Comments on posts</li>
+                <li>Google and Yelp review replies</li>
+                <li>Scheduling and publishing</li>
+                <li>Same-day escalation when a manager is needed</li>
+                <li>Content approvals before posting</li>
+              </ul>
+            </div>
+            <div class="services__catalog-group">
+              <h4>Search</h4>
+              <ul>
+                <li>Search Console setup</li>
+                <li>Sitemap, robots.txt, and canonical tags</li>
+                <li>Service, location, and FAQ pages, when scoped</li>
+                <li>Internal links and headings that match the offer</li>
+              </ul>
+            </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="included" id="included" aria-labelledby="included-heading">
+      <div class="included__inner">
+        <p class="included__eyebrow" data-animate>What's included</p>
+        <h2 class="included__title" id="included-heading" data-animate>The work, without paid ads.</h2>
+        <p class="included__lede" data-animate>A 12-month organic strategy, with a 90-day commitment. The list is the engagement. Items marked as scoped are included when they are part of the work.</p>
+        <div class="included__grid">
+          <div class="included__group">
+            <h3>Strategy</h3>
+            <ul>
+              <li>Campaign design around the brand’s public-relations needs</li>
+              <li>Audit profiles and analyze competitors</li>
+              <li>Lock voice, visual style, and content pillars</li>
+              <li>Clean up bios, highlights, and links across platforms</li>
+              <li>A 12-month organic, no-ad content strategy</li>
+              <li>Look and tone guidelines</li>
+              <li>Content calendar and posting cadence</li>
+              <li>Event planning against the calendar</li>
+              <li>Creative direction and shot lists for on-site teams</li>
+              <li>Set a baseline and report each month — keep, kill, or add</li>
+              <li>Weekly progress reports</li>
+            </ul>
+          </div>
+          <div class="included__group">
+            <h3>Content</h3>
+            <ul>
+              <li>Feed posts, Reels, and Stories</li>
+              <li>Documentary-style and short-form video</li>
+              <li>On-site photography and videography</li>
+              <li>On-site film crew and writers’ room, as scoped</li>
+              <li>Serialized, episode-style content</li>
+              <li>Staff and interview features</li>
+              <li>Editing, captions, and scheduling</li>
+              <li>Guest and customer content, reshared with permission</li>
+              <li>Cross-posting to Facebook, TikTok, and YouTube Shorts</li>
+              <li>Google Business Profile content</li>
+              <li>Website or landing-page refresh, when scoped</li>
+              <li>Clipping campaigns, after the first 90 days</li>
+            </ul>
+          </div>
+          <div class="included__group">
+            <h3>Community</h3>
+            <ul>
+              <li>DMs and public replies during business hours</li>
+              <li>Comments on posts</li>
+              <li>Google and Yelp review replies</li>
+              <li>Scheduling and publishing</li>
+              <li>Same-day escalation when a manager is needed</li>
+              <li>Content approvals before posting</li>
+              <li>Set up and tend a Google Business Profile</li>
+            </ul>
+          </div>
+          <div class="included__group">
+            <h3>Search, when scoped</h3>
+            <ul>
+              <li>Search Console setup</li>
+              <li>Sitemap, robots.txt, and canonical tags</li>
+              <li>Service, location, and FAQ pages</li>
+              <li>Internal links and headings that match the offer</li>
+              <li>On-page titles, descriptions, and schema</li>
+              <li>A keyword and content plan tied to the social calendar</li>
+              <li>Name, address, and phone kept consistent across local listings</li>
+              <li>Monthly reporting on organic search</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="beat beat--close" id="involvement" aria-labelledby="involvement-heading">
+      <div class="beat__inner">
+        <h2 class="beat__title beat__title--close" id="involvement-heading">Community involvement, in real time.</h2>
       </div>
     </section>
 
@@ -1444,9 +2206,12 @@
       <div class="follow__inner">
         <div class="follow__stage" data-motion="evergreen"><!-- evergreen-breaks-v1 -->
           <div class="recycle" aria-hidden="true">
-            <div class="recycle__head recycle__head--1"><svg viewBox="-31 -30 62 60" aria-hidden="true"><path class="recycle__head-shape" d="M-18.667,-21 L37.333,0 L-18.667,21 Z"/></svg></div>
-            <div class="recycle__head recycle__head--2"><svg viewBox="-31 -30 62 60" aria-hidden="true"><path class="recycle__head-shape" d="M-18.667,-21 L37.333,0 L-18.667,21 Z"/></svg></div>
-            <div class="recycle__head recycle__head--3"><svg viewBox="-31 -30 62 60" aria-hidden="true"><path class="recycle__head-shape" d="M-18.667,-21 L37.333,0 L-18.667,21 Z"/></svg></div>
+            <svg class="recycle__loop" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" overflow="visible" focusable="false">
+              <path class="recycle__band" pathLength="300" shape-rendering="geometricPrecision"/>
+            </svg>
+            <div class="recycle__head recycle__head--1"><svg viewBox="-4 -21 41 42" aria-hidden="true" shape-rendering="geometricPrecision"><path class="recycle__face" d="M37,0 L0,-21 L0,-8 L-4,-8 L-4,8 L0,8 L0,21 Z"/></svg></div>
+            <div class="recycle__head recycle__head--2"><svg viewBox="-4 -21 41 42" aria-hidden="true" shape-rendering="geometricPrecision"><path class="recycle__face" d="M37,0 L0,-21 L0,-8 L-4,-8 L-4,8 L0,8 L0,21 Z"/></svg></div>
+            <div class="recycle__head recycle__head--3"><svg viewBox="-4 -21 41 42" aria-hidden="true" shape-rendering="geometricPrecision"><path class="recycle__face" d="M37,0 L0,-21 L0,-8 L-4,-8 L-4,8 L0,8 L0,21 Z"/></svg></div>
           </div>
           <div class="follow__copy">
             <h2 class="follow__title" aria-label="A video you post today can bring you business months from now.">
@@ -1464,122 +2229,11 @@
       </div>
     </section>
 
-    <section class="signal" id="signal" aria-label="Yellow means speed up to the next section">
-      <div class="signal__inner">
-        <svg class="signal__light" data-motion="signal" viewBox="0 0 720 248" aria-hidden="true">
-          <defs>
-            <linearGradient id="mast-metal" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#5A5A5A"/>
-              <stop offset="22%" stop-color="#3A3A3A"/>
-              <stop offset="55%" stop-color="#1E1E1E"/>
-              <stop offset="100%" stop-color="#111"/>
-            </linearGradient>
-            <linearGradient id="housing-paint" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#2C4A38"/>
-              <stop offset="14%" stop-color="#1A3326"/>
-              <stop offset="100%" stop-color="#101E16"/>
-            </linearGradient>
-            <linearGradient id="door-paint" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#243E30"/>
-              <stop offset="100%" stop-color="#15261C"/>
-            </linearGradient>
-            <filter id="signal-green-glow" x="-40%" y="-40%" width="180%" height="180%">
-              <feGaussianBlur stdDeviation="5" result="blur"/>
-              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-            <filter id="signal-yellow-glow" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="7" result="blur"/>
-              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-          </defs>
-          <rect class="signal__mast" x="16" y="20" width="688" height="16" rx="8"/>
-          <path class="signal__mast-hi" d="M28 23.6 H692"/>
-          <g class="signal__hanger" transform="translate(168 0)">
-            <rect class="signal__hanger-bar" x="-6" y="30" width="12" height="46" rx="1.5"/>
-            <rect class="signal__hanger-plate" x="-16" y="18" width="32" height="18" rx="2"/>
-            <rect class="signal__hanger-foot" x="-14" y="68" width="28" height="12" rx="2"/>
-            <g class="signal__rivet" transform="translate(0,27)"><circle r="2.4" fill="#3A5548" stroke="#0A120E" stroke-width="0.6"/><circle cx="-0.5" cy="-0.6" r="0.84" fill="#6A8A74" opacity=".7"/></g><g class="signal__rivet" transform="translate(-8,27)"><circle r="1.8" fill="#3A5548" stroke="#0A120E" stroke-width="0.6"/><circle cx="-0.5" cy="-0.6" r="0.63" fill="#6A8A74" opacity=".7"/></g><g class="signal__rivet" transform="translate(8,27)"><circle r="1.8" fill="#3A5548" stroke="#0A120E" stroke-width="0.6"/><circle cx="-0.5" cy="-0.6" r="0.63" fill="#6A8A74" opacity=".7"/></g><g class="signal__rivet" transform="translate(0,74)"><circle r="2.2" fill="#3A5548" stroke="#0A120E" stroke-width="0.6"/><circle cx="-0.5" cy="-0.6" r="0.77" fill="#6A8A74" opacity=".7"/></g>
-          </g>
-          <g class="signal__hanger" transform="translate(360 0)">
-            <rect class="signal__hanger-bar" x="-6" y="30" width="12" height="46" rx="1.5"/>
-            <rect class="signal__hanger-plate" x="-16" y="18" width="32" height="18" rx="2"/>
-            <rect class="signal__hanger-foot" x="-14" y="68" width="28" height="12" rx="2"/>
-            <g class="signal__rivet" transform="translate(0,27)"><circle r="2.4" fill="#3A5548" stroke="#0A120E" stroke-width="0.6"/><circle cx="-0.5" cy="-0.6" r="0.84" fill="#6A8A74" opacity=".7"/></g><g class="signal__rivet" transform="translate(-8,27)"><circle r="1.8" fill="#3A5548" stroke="#0A120E" stroke-width="0.6"/><circle cx="-0.5" cy="-0.6" r="0.63" fill="#6A8A74" opacity=".7"/></g><g class="signal__rivet" transform="translate(8,27)"><circle r="1.8" fill="#3A5548" stroke="#0A120E" stroke-width="0.6"/><circle cx="-0.5" cy="-0.6" r="0.63" fill="#6A8A74" opacity=".7"/></g><g class="signal__rivet" transform="translate(0,74)"><circle r="2.2" fill="#3A5548" stroke="#0A120E" stroke-width="0.6"/><circle cx="-0.5" cy="-0.6" r="0.77" fill="#6A8A74" opacity=".7"/></g>
-          </g>
-          <g class="signal__hanger" transform="translate(552 0)">
-            <rect class="signal__hanger-bar" x="-6" y="30" width="12" height="46" rx="1.5"/>
-            <rect class="signal__hanger-plate" x="-16" y="18" width="32" height="18" rx="2"/>
-            <rect class="signal__hanger-foot" x="-14" y="68" width="28" height="12" rx="2"/>
-            <g class="signal__rivet" transform="translate(0,27)"><circle r="2.4" fill="#3A5548" stroke="#0A120E" stroke-width="0.6"/><circle cx="-0.5" cy="-0.6" r="0.84" fill="#6A8A74" opacity=".7"/></g><g class="signal__rivet" transform="translate(-8,27)"><circle r="1.8" fill="#3A5548" stroke="#0A120E" stroke-width="0.6"/><circle cx="-0.5" cy="-0.6" r="0.63" fill="#6A8A74" opacity=".7"/></g><g class="signal__rivet" transform="translate(8,27)"><circle r="1.8" fill="#3A5548" stroke="#0A120E" stroke-width="0.6"/><circle cx="-0.5" cy="-0.6" r="0.63" fill="#6A8A74" opacity=".7"/></g><g class="signal__rivet" transform="translate(0,74)"><circle r="2.2" fill="#3A5548" stroke="#0A120E" stroke-width="0.6"/><circle cx="-0.5" cy="-0.6" r="0.77" fill="#6A8A74" opacity=".7"/></g>
-          </g>
-          <rect class="signal__backplate" x="44" y="68" width="632" height="156" rx="8"/>
-          <rect class="signal__housing" x="56" y="78" width="608" height="140" rx="7"/>
-          <rect class="signal__housing-lip" x="56" y="212" width="608" height="8" rx="2"/>
-          <rect class="signal__door" x="66.0" y="88" width="188.0" height="120" rx="5"/>
-          <rect class="signal__door" x="262.0" y="88" width="188.0" height="120" rx="5"/>
-          <rect class="signal__door" x="458.0" y="88" width="188.0" height="120" rx="5"/>
-          <line class="signal__seam" x1="258.7" y1="84" x2="258.7" y2="212"/>
-          <line class="signal__seam" x1="461.3" y1="84" x2="461.3" y2="212"/>
-          <g class="signal__rivet" transform="translate(74.0,96)"><circle r="2.1" fill="#3A5548" stroke="#0A120E" stroke-width="0.6"/><circle cx="-0.5" cy="-0.6" r="0.735" fill="#6A8A74" opacity=".7"/></g>
-          <g class="signal__rivet" transform="translate(246.0,96)"><circle r="2.1" fill="#3A5548" stroke="#0A120E" stroke-width="0.6"/><circle cx="-0.5" cy="-0.6" r="0.735" fill="#6A8A74" opacity=".7"/></g>
-          <g class="signal__rivet" transform="translate(74.0,200)"><circle r="2.1" fill="#3A5548" stroke="#0A120E" stroke-width="0.6"/><circle cx="-0.5" cy="-0.6" r="0.735" fill="#6A8A74" opacity=".7"/></g>
-          <g class="signal__rivet" transform="translate(246.0,200)"><circle r="2.1" fill="#3A5548" stroke="#0A120E" stroke-width="0.6"/><circle cx="-0.5" cy="-0.6" r="0.735" fill="#6A8A74" opacity=".7"/></g>
-          <g class="signal__rivet" transform="translate(160.0,96)"><circle r="2.1" fill="#3A5548" stroke="#0A120E" stroke-width="0.6"/><circle cx="-0.5" cy="-0.6" r="0.735" fill="#6A8A74" opacity=".7"/></g>
-          <g class="signal__rivet" transform="translate(160.0,200)"><circle r="2.1" fill="#3A5548" stroke="#0A120E" stroke-width="0.6"/><circle cx="-0.5" cy="-0.6" r="0.735" fill="#6A8A74" opacity=".7"/></g>
-          <g class="signal__rivet" transform="translate(270.0,96)"><circle r="2.1" fill="#3A5548" stroke="#0A120E" stroke-width="0.6"/><circle cx="-0.5" cy="-0.6" r="0.735" fill="#6A8A74" opacity=".7"/></g>
-          <g class="signal__rivet" transform="translate(442.0,96)"><circle r="2.1" fill="#3A5548" stroke="#0A120E" stroke-width="0.6"/><circle cx="-0.5" cy="-0.6" r="0.735" fill="#6A8A74" opacity=".7"/></g>
-          <g class="signal__rivet" transform="translate(270.0,200)"><circle r="2.1" fill="#3A5548" stroke="#0A120E" stroke-width="0.6"/><circle cx="-0.5" cy="-0.6" r="0.735" fill="#6A8A74" opacity=".7"/></g>
-          <g class="signal__rivet" transform="translate(442.0,200)"><circle r="2.1" fill="#3A5548" stroke="#0A120E" stroke-width="0.6"/><circle cx="-0.5" cy="-0.6" r="0.735" fill="#6A8A74" opacity=".7"/></g>
-          <g class="signal__rivet" transform="translate(356.0,96)"><circle r="2.1" fill="#3A5548" stroke="#0A120E" stroke-width="0.6"/><circle cx="-0.5" cy="-0.6" r="0.735" fill="#6A8A74" opacity=".7"/></g>
-          <g class="signal__rivet" transform="translate(356.0,200)"><circle r="2.1" fill="#3A5548" stroke="#0A120E" stroke-width="0.6"/><circle cx="-0.5" cy="-0.6" r="0.735" fill="#6A8A74" opacity=".7"/></g>
-          <g class="signal__rivet" transform="translate(466.0,96)"><circle r="2.1" fill="#3A5548" stroke="#0A120E" stroke-width="0.6"/><circle cx="-0.5" cy="-0.6" r="0.735" fill="#6A8A74" opacity=".7"/></g>
-          <g class="signal__rivet" transform="translate(638.0,96)"><circle r="2.1" fill="#3A5548" stroke="#0A120E" stroke-width="0.6"/><circle cx="-0.5" cy="-0.6" r="0.735" fill="#6A8A74" opacity=".7"/></g>
-          <g class="signal__rivet" transform="translate(466.0,200)"><circle r="2.1" fill="#3A5548" stroke="#0A120E" stroke-width="0.6"/><circle cx="-0.5" cy="-0.6" r="0.735" fill="#6A8A74" opacity=".7"/></g>
-          <g class="signal__rivet" transform="translate(638.0,200)"><circle r="2.1" fill="#3A5548" stroke="#0A120E" stroke-width="0.6"/><circle cx="-0.5" cy="-0.6" r="0.735" fill="#6A8A74" opacity=".7"/></g>
-          <g class="signal__rivet" transform="translate(552.0,96)"><circle r="2.1" fill="#3A5548" stroke="#0A120E" stroke-width="0.6"/><circle cx="-0.5" cy="-0.6" r="0.735" fill="#6A8A74" opacity=".7"/></g>
-          <g class="signal__rivet" transform="translate(552.0,200)"><circle r="2.1" fill="#3A5548" stroke="#0A120E" stroke-width="0.6"/><circle cx="-0.5" cy="-0.6" r="0.735" fill="#6A8A74" opacity=".7"/></g>
-          <g class="signal__unit" transform="translate(162 148)">
-            <path class="signal__visor" d="M-48,22 L-48,-4 C-48,-50 48,-50 48,-4 L48,22 L35,22 L35,-2 C35,-34 -35,-34 -35,-2 L-35,22 Z"/>
-            <path class="signal__visor-lip" d="M-35,-2 C-35,-34 35,-34 35,-2"/>
-            <circle class="signal__tunnel" r="33.5"/>
-            <circle class="signal__bezel" r="36.5"/>
-            <circle class="signal__lamp signal__lamp--red" r="32"/>
-            <g class="signal__fresnel">
-              <circle r="26"/><circle r="20"/><circle r="14"/><circle r="8"/>
-            </g>
-            <ellipse class="signal__glint" cx="-9" cy="-11" rx="11" ry="6" transform="rotate(-32)"/>
-          </g>
-          <g class="signal__unit" transform="translate(360 148)">
-            <path class="signal__visor" d="M-48,22 L-48,-4 C-48,-50 48,-50 48,-4 L48,22 L35,22 L35,-2 C35,-34 -35,-34 -35,-2 L-35,22 Z"/>
-            <path class="signal__visor-lip" d="M-35,-2 C-35,-34 35,-34 35,-2"/>
-            <circle class="signal__tunnel" r="33.5"/>
-            <circle class="signal__bezel" r="36.5"/>
-            <circle class="signal__lamp signal__lamp--yellow" r="32"/>
-            <g class="signal__fresnel">
-              <circle r="26"/><circle r="20"/><circle r="14"/><circle r="8"/>
-            </g>
-            <ellipse class="signal__glint" cx="-9" cy="-11" rx="11" ry="6" transform="rotate(-32)"/>
-          </g>
-          <g class="signal__unit" transform="translate(558 148)">
-            <path class="signal__visor" d="M-48,22 L-48,-4 C-48,-50 48,-50 48,-4 L48,22 L35,22 L35,-2 C35,-34 -35,-34 -35,-2 L-35,22 Z"/>
-            <path class="signal__visor-lip" d="M-35,-2 C-35,-34 35,-34 35,-2"/>
-            <circle class="signal__tunnel" r="33.5"/>
-            <circle class="signal__bezel" r="36.5"/>
-            <circle class="signal__lamp signal__lamp--green" r="32"/>
-            <g class="signal__fresnel">
-              <circle r="26"/><circle r="20"/><circle r="14"/><circle r="8"/>
-            </g>
-            <ellipse class="signal__glint" cx="-9" cy="-11" rx="11" ry="6" transform="rotate(-32)"/>
-          </g>
-        </svg>
-      </div>
-    </section>
-
     <section class="results" id="case-study" aria-labelledby="case-study-heading">
       <div class="results__inner">
         <p class="results__eyebrow" id="case-study-heading" data-animate>Case study</p>
         <h2 class="results__title" data-animate><span>The first thirty days.</span> <span>Organic only.</span></h2>
-        <p class="results__lede" data-animate>For a DFW hospitality client, CHALANT built a new account using an organic content strategy and a no-ad creative campaign.</p>
+        <p class="results__lede" data-animate>For a Dallas-area bar, CHALANT built a new account using an organic content strategy and a no-ad creative campaign.</p>
 
         <div class="results__hero" data-animate>
           <p class="results__hero-num">114,586</p>
@@ -1706,12 +2360,29 @@
     </section>
   </main>
 
+  <footer class="footer" id="contact">
+    <div class="footer__inner">
+      <p class="footer__eyebrow">Contact</p>
+      <p class="footer__title">CHALANT</p>
+      <p class="footer__area">Dallas–Fort Worth</p>
+      <address class="footer__address">
+        4312 Munger Ave<br>
+        Dallas, TX 75204
+      </address>
+      <ul class="footer__list">
+        <li><a href="tel:+12148082189">214-808-2189</a></li>
+        <li><a href="mailto:Brian@chalantcreative.com">Brian@chalantcreative.com</a></li>
+        <li><a href="https://www.instagram.com/chalant_agency/">Instagram</a></li>
+      </ul>
+      <p class="footer__hours">By appointment only</p>
+    </div>
+  </footer>
+
 <script>
 (function(){
-  var nodes = document.querySelectorAll('.method [data-animate], .results [data-animate], .services [data-animate]');
+  var nodes = document.querySelectorAll('.method [data-animate], .results [data-animate], .services [data-animate], .included [data-animate]');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var motions = document.querySelectorAll('[data-motion]:not([data-motion="signal"])');
-  var signals = document.querySelectorAll('[data-motion="signal"]');
+  var motions = document.querySelectorAll('[data-motion]');
 
   function initServices(reduceMotion){
     var layout = document.querySelector('.services__layout');
@@ -1719,21 +2390,23 @@
     var chart = layout.querySelector('.services__chart');
     var blades = Array.prototype.slice.call(layout.querySelectorAll('.services__blade'));
     var wings = Array.prototype.slice.call(layout.querySelectorAll('.services__wing'));
-    var panelTitle = layout.querySelector('.services__panel-title');
-    var panelBody = layout.querySelector('.services__panel-body');
+    var panes = Array.prototype.slice.call(layout.querySelectorAll('.services__pane'));
     var ids = ['campaign', 'creation', 'community'];
-    var copy = {
-      campaign: { title: '1. Campaign Strategy', body: 'We address your public relations needs and find the best way to present your business to the market.' },
-      creation: { title: '2. Content Creation', body: 'We find the style your brand needs: cinematic, documentary, found footage, even goofy. Whatever fits your business.' },
-      community: { title: '3. Community Management', body: 'We distribute your content, reply to DMs, handle Google reviews, comment back on posts, and schedule.' }
-    };
     var current = 'campaign';
     var pinned = false;
     var index = 0;
     var timer = null;
+    var allToggle = layout.querySelector('.services__all-toggle');
+    var allCatalog = layout.querySelector('#services-catalog');
 
+    function setCatalogOpen(open){
+      if (!allToggle || !allCatalog) return;
+      allToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (open) allCatalog.removeAttribute('hidden');
+      else allCatalog.setAttribute('hidden', '');
+    }
     function show(id){
-      if (!copy[id]) return;
+      if (ids.indexOf(id) < 0) return;
       current = id;
       index = ids.indexOf(id);
       wings.forEach(function(w){
@@ -1744,8 +2417,19 @@
         blade.setAttribute('aria-checked', on ? 'true' : 'false');
         blade.tabIndex = on ? 0 : -1;
       });
-      panelTitle.textContent = copy[id].title;
-      panelBody.textContent = copy[id].body;
+      panes.forEach(function(pane){
+        var on = pane.getAttribute('data-service') === current;
+        pane.classList.toggle('is-active', on);
+        if (on) pane.removeAttribute('hidden');
+        else pane.setAttribute('hidden', '');
+      });
+      if (current !== 'community') setCatalogOpen(false);
+    }
+    if (allToggle){
+      allToggle.addEventListener('click', function(){
+        var open = allToggle.getAttribute('aria-expanded') !== 'true';
+        setCatalogOpen(open);
+      });
     }
 
     function stopCycle(){
@@ -1790,7 +2474,10 @@
       });
     });
 
-    show(ids[0]);
+    var hashToService = { design:'campaign', execute:'creation', distribute:'community' };
+    var startHash = (location.hash || '').replace('#','');
+    if (hashToService[startHash]) userSelect(hashToService[startHash]);
+    else show(ids[0]);
     if (!reduceMotion && chart){
       if (chart.classList.contains('is-playing')) startCycle();
       if ('MutationObserver' in window){
@@ -1845,11 +2532,57 @@
       return dstr;
     }
 
-    function applyPath(d){
+    var loop = rec.querySelector('.recycle__loop');
+    var band = rec.querySelector('.recycle__band');
+    var reduceMQ = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var restDist = [33.333, 66.667, 0];
+    var dashStart = 80;
+    var playing = false;
+    var raf = 0;
+    var playStart = 0;
+    var pathD = '';
+
+    function applyMark(d, boxW, boxH){
+      pathD = d;
+      if (loop){
+        loop.setAttribute('viewBox', '0 0 ' + boxW + ' ' + boxH);
+      }
+      if (band){
+        band.setAttribute('d', d);
+        band.setAttribute('stroke-width', String(bandWNow));
+      }
+      var headWpx = headBNow * 41 / 42;
+      var headHpx = headBNow;
       for (var i = 0; i < heads.length; i++){
+        heads[i].style.width = headWpx + 'px';
+        heads[i].style.height = headHpx + 'px';
         heads[i].style.offsetPath = 'path("' + d + '")';
+        if (!playing) heads[i].style.offsetDistance = restDist[i] + '%';
+      }
+      if (band && band.getTotalLength){
+        var peri = band.getTotalLength();
+        if (peri > 1){
+          var headUnits = (headLenNow / peri) * 300;
+          var gapUnits = (Math.max(6, bandWNow * 0.4) / peri) * 300;
+          var S = 100 - headUnits - gapUnits;
+          if (S < 40) S = 40;
+          // v4 stem included the corner arc plus the straight run; keep the
+          // bend and heads, cut the straight segments to 75% of v4 length.
+          var arcUnits = (radiusNow * Math.PI * 2 / 3 / peri) * 300;
+          if (arcUnits < 0) arcUnits = 0;
+          if (arcUnits > S) arcUnits = S;
+          S = arcUnits + (S - arcUnits) * 0.75;
+          dashStart = S;
+          band.style.strokeDasharray = S + ' ' + (100 - S);
+          if (!playing) band.style.strokeDashoffset = String(S);
+        }
       }
     }
+
+    var bandWNow = 27;
+    var headBNow = 42 * 27 / 16;
+    var headLenNow = 37 * 27 / 16;
+    var radiusNow = 27;
 
     var lastKey = '';
     var wideLine = stage ? stage.querySelectorAll('.follow__line')[5] : null;
@@ -1885,10 +2618,12 @@
       var w = rec.clientWidth;
       if (w < 40) return;
 
-      var headH = heads[0].offsetHeight || 50;
-      var inward = headH * 21 / 60;
       var narrow = w < 700;
-      var gap = narrow ? 16 : 34;
+      var bandW = narrow ? 16 : (w < 900 ? 27 : 37);
+      var headB = bandW * 42 / 16;
+      var headLen = bandW * 37 / 16;
+      var inward = headB / 2;
+      var gap = narrow ? 20 : 40;
       var edge = narrow ? 6 : 12;
       var inset = inward + gap;
       var outward = inward;
@@ -1968,8 +2703,51 @@
       var br = [midX + pathW / 2, baseY];
       var bl = [midX - pathW / 2, baseY];
       var side = Math.hypot(br[0] - top[0], br[1] - top[1]);
-      var radius = Math.min(side * 0.14, narrow ? 28 : 72);
-      applyPath(roundedPath([top, br, bl], radius));
+      var radius = Math.max(bandW * 0.65, Math.min(side * 0.08, bandW * 1.2));
+      bandWNow = bandW;
+      headBNow = headB;
+      headLenNow = headLen;
+      radiusNow = radius;
+      applyMark(roundedPath([top, br, bl], radius), w, Math.ceil(stageH));
+    }
+
+    function setRest(){
+      if (band) band.style.strokeDashoffset = String(dashStart);
+      for (var i = 0; i < heads.length; i++){
+        heads[i].style.offsetDistance = restDist[i] + '%';
+      }
+    }
+
+    function frame(now){
+      if (!playing) return;
+      var t = ((now - playStart) / 9000) % 1;
+      if (t < 0) t = 0;
+      if (band) band.style.strokeDashoffset = String(dashStart - 300 * t);
+      for (var i = 0; i < heads.length; i++){
+        var d = restDist[i] + t * 100;
+        if (d >= 100) d -= 100;
+        heads[i].style.offsetDistance = d + '%';
+      }
+      raf = requestAnimationFrame(frame);
+    }
+
+    function stopChase(){
+      playing = false;
+      if (raf){ cancelAnimationFrame(raf); raf = 0; }
+      setRest();
+    }
+
+    function startChase(){
+      if (reduceMQ.matches || playing) return;
+      if (!stage || !stage.classList.contains('is-playing')) return;
+      playing = true;
+      playStart = performance.now();
+      raf = requestAnimationFrame(frame);
+    }
+
+    function syncChase(){
+      if (reduceMQ.matches || !stage.classList.contains('is-playing')) stopChase();
+      else startChase();
     }
 
     layout();
@@ -1981,15 +2759,101 @@
     if (document.fonts && document.fonts.ready){
       document.fonts.ready.then(layout);
     }
+    if ('MutationObserver' in window && stage){
+      new MutationObserver(syncChase).observe(stage, { attributes:true, attributeFilter:['class'] });
+    }
+    if (reduceMQ.addEventListener) reduceMQ.addEventListener('change', syncChase);
+    else if (reduceMQ.addListener) reduceMQ.addListener(syncChase);
+    syncChase();
+  }
+
+
+  function initPageNav(){
+    var nav = document.querySelector('.page-nav');
+    if (!nav) return;
+    var links = Array.prototype.slice.call(nav.querySelectorAll('a[href^="#"]'));
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function navOffset(){
+      return nav.getBoundingClientRect().height;
+    }
+    function scrollToId(id){
+      var target = document.getElementById(id);
+      if (!target) return false;
+      var top = window.pageYOffset + target.getBoundingClientRect().top - navOffset() - 16;
+      window.scrollTo({ top: Math.max(0, top), behavior: reduce ? 'auto' : 'smooth' });
+      return true;
+    }
+    links.forEach(function(link){
+      link.addEventListener('click', function(e){
+        var href = link.getAttribute('href') || '';
+        if (href.charAt(0) !== '#') return;
+        var id = href.slice(1);
+        if (!id) return;
+        if (scrollToId(id)){
+          e.preventDefault();
+          // setCurrent is assigned below; click after init is fine
+          if (typeof setCurrent === 'function') setCurrent(link);
+          if (history.replaceState) history.replaceState(null, '', href);
+        }
+      });
+    });
+
+    var targets = [];
+    links.forEach(function(link){
+      var id = (link.getAttribute('href') || '').slice(1);
+      var el = id && document.getElementById(id);
+      if (el) targets.push({ el: el, link: link });
+    });
+    function setCurrent(link){
+      links.forEach(function(l){
+        if (l === link) l.setAttribute('aria-current', 'location');
+        else l.removeAttribute('aria-current');
+      });
+      if (link && link.scrollIntoView){
+        link.scrollIntoView({ inline: 'nearest', block: 'nearest', behavior: 'auto' });
+      }
+    }
+    function updateCurrent(){
+      var line = navOffset() + 24;
+      var current = null;
+      targets.forEach(function(t){
+        if (t.el.getBoundingClientRect().top <= line) current = t.link;
+      });
+      setCurrent(current || (targets[0] && targets[0].link));
+    }
+    window.addEventListener('scroll', updateCurrent, {passive:true});
+    window.addEventListener('resize', updateCurrent);
+    updateCurrent();
+    if (location.hash){
+      var startId = location.hash.replace('#','');
+      if (document.getElementById(startId)){
+        requestAnimationFrame(function(){ scrollToId(startId); });
+      }
+    }
   }
 
   initServices(reduce);
   initEvergreen();
+  initPageNav();
+
+  function sizeFeeds(){
+    var slots = document.querySelector('.slots');
+    var screen = slots && slots.querySelector('.phone__screen');
+    if (!slots || !screen) return;
+    var h = screen.clientHeight;
+    if (h) slots.style.setProperty('--cell', h + 'px');
+  }
+  sizeFeeds();
+  if (window.ResizeObserver){
+    var slotsEl = document.querySelector('.slots');
+    if (slotsEl) new ResizeObserver(sizeFeeds).observe(slotsEl);
+  }
+  window.addEventListener('resize', sizeFeeds);
 
   if (reduce || !('IntersectionObserver' in window)){
     nodes.forEach(function(el){ el.classList.add('is-in'); });
     motions.forEach(function(el){ el.classList.add('is-static'); });
-    signals.forEach(function(el){ el.classList.add('is-static'); });
     return;
   }
   var io = new IntersectionObserver(function(entries){
@@ -2002,10 +2866,202 @@
   }, { threshold: 0.22, rootMargin: '0px 0px -8% 0px' });
   nodes.forEach(function(el){ io.observe(el); });
 
-  var entertain = document.querySelector('[data-motion="entertain"]');
-  if (entertain) entertain.classList.add('is-playing');
+  /* slot-raf-v1: feed position is (now + phase) * speed mod loop,
+     from absolute time, in one rAF loop. The first paint after WebKit
+     un-throttles is already mid-scroll at full speed. Landing eases
+     velocity from that full speed to 0 over ~2.4s, staggered, on the
+     existing mostly-in-view trigger, then stays landed. */
+  function initEntertain(){
+    var root = document.querySelector('[data-motion="entertain"]');
+    if (!root) return;
+    var group = root.querySelector('.slots') || root;
+    var reels = root.querySelectorAll('.feed__reel');
+    if (!reels.length) return;
+    var landed = false;
+    var landing = false;
+    var spinDurs = [2050, 2280, 1900];
+    var phases = [820, 1370, 510];
+    var landDelay = [0, 350, 700];
+    var landDur = [1700, 1750, 1700];
+    var landStart = [null, null, null];
+    var landY0 = [null, null, null];
+    var landTarget = [null, null, null];
+    var landDone = [false, false, false];
+    var rafId = 0;
+
+    function cellSize(){
+      var screen = group.querySelector('.phone__screen');
+      var h = screen ? screen.clientHeight : 0;
+      if (h) group.style.setProperty('--cell', h + 'px');
+      return h;
+    }
+    function spinY(i, now, loop, speed){
+      var off = (now + phases[i]) * speed;
+      off = off % loop;
+      if (off < 0) off += loop;
+      return -off;
+    }
+    function hermite(y0, v0, y1, v1, dur, t){
+      if (t <= 0) return y0;
+      if (t >= dur) return y1;
+      var u = t / dur;
+      var u2 = u * u;
+      var u3 = u2 * u;
+      var h00 = 2 * u3 - 3 * u2 + 1;
+      var h10 = u3 - 2 * u2 + u;
+      var h01 = -2 * u3 + 3 * u2;
+      var h11 = u3 - u2;
+      return h00 * y0 + h10 * dur * v0 + h01 * y1 + h11 * dur * v1;
+    }
+    function apply(){
+      var now = performance.now();
+      var cell = cellSize();
+      if (cell < 1) return;
+      var loop = cell * 6;
+      var lock = -4 * cell;
+      var allDone = landing;
+      for (var i = 0; i < reels.length; i++){
+        var speed = loop / spinDurs[i];
+        var y;
+        if (landStart[i] != null && now >= landStart[i]){
+          if (landY0[i] == null){
+            landY0[i] = spinY(i, now, loop, speed);
+            var target = lock;
+            var minTravel = loop * 0.35;
+            while (target > landY0[i] - minTravel) target -= loop;
+            landTarget[i] = target;
+          }
+          var t = now - landStart[i];
+          if (t >= landDur[i]){
+            y = landTarget[i];
+            landDone[i] = true;
+          } else {
+            y = hermite(landY0[i], -speed, landTarget[i], 0, landDur[i], t);
+            allDone = false;
+          }
+        } else {
+          y = spinY(i, now, loop, speed);
+          if (landing) allDone = false;
+        }
+        reels[i].style.transform = 'translate3d(0,' + y + 'px,0)';
+      }
+      if (landing && allDone){
+        landed = true;
+        landing = false;
+        root.classList.add('is-landed');
+        root.classList.remove('is-landing');
+        var lockY = -4 * cellSize();
+        for (var j = 0; j < reels.length; j++){
+          reels[j].style.transform = 'translate3d(0,' + lockY + 'px,0)';
+        }
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = 0;
+      }
+    }
+    function slotReadyToLand(el){
+      var r = el.getBoundingClientRect();
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      if (vh <= 0) return false;
+      var mid = (r.top + r.bottom) / 2;
+      return r.bottom <= vh && mid <= vh * 0.60;
+    }
+    function beginLand(){
+      if (landed || landing) return;
+      landing = true;
+      root.classList.add('is-landing');
+      var now = performance.now();
+      for (var i = 0; i < reels.length; i++){
+        landStart[i] = now + landDelay[i];
+        landY0[i] = null;
+        landTarget[i] = null;
+        landDone[i] = false;
+      }
+    }
+    function tick(){
+      if (landed) return;
+      rafId = requestAnimationFrame(tick);
+      apply();
+      if (!landing && !landed && slotReadyToLand(group)) beginLand();
+    }
+    apply();
+    rafId = requestAnimationFrame(tick);
+  }
+  initEntertain();
+
+  /* sell-tap-once-v1: play the tap once when Sell comes into view,
+     flood PAID, and hold. No loop, no replay. */
   var sell = document.querySelector('[data-motion="sell"]');
-  if (sell) sell.classList.add('is-playing');
+  if (sell){
+    var sellIo = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){
+          sell.classList.add('is-playing');
+          watchPaidChimeOnce();
+          sellIo.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.15});
+    sellIo.observe(sell);
+  }
+
+  /* paid-chime-v1: original two-tone success chime on the PAID flash.
+     Unlocks on first pointer/key/touch; plays only once, if Sell is
+     in view, the tab is visible, and motion is allowed. Modest volume. */
+  var paidAudio = null;
+  var paidAudioReady = false;
+  var paidChimePlayed = false;
+  function unlockPaidAudio(){
+    var Ctx = window.AudioContext || window.webkitAudioContext;
+    if (!Ctx) return;
+    if (!paidAudio) paidAudio = new Ctx();
+    if (paidAudio.state === 'suspended') paidAudio.resume();
+    paidAudioReady = paidAudio.state === 'running';
+  }
+  ['pointerdown','keydown','touchstart'].forEach(function(type){
+    window.addEventListener(type, unlockPaidAudio, {passive:true, capture:true});
+  });
+  function playPaidChime(){
+    if (paidChimePlayed) return;
+    if (!paidAudioReady || !paidAudio || paidAudio.state !== 'running') return;
+    if (document.hidden) return;
+    var vis = document.querySelector('[data-motion="sell"]');
+    if (!vis) return;
+    var r = vis.getBoundingClientRect();
+    if (r.bottom < 0 || r.top > window.innerHeight || r.right < 0 || r.left > window.innerWidth) return;
+    paidChimePlayed = true;
+    var t0 = paidAudio.currentTime;
+    function tone(freq, start, dur, peak){
+      var osc = paidAudio.createOscillator();
+      var gain = paidAudio.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, t0 + start);
+      gain.gain.setValueAtTime(0.0001, t0 + start);
+      gain.gain.exponentialRampToValueAtTime(peak, t0 + start + 0.012);
+      gain.gain.exponentialRampToValueAtTime(0.0001, t0 + start + dur);
+      osc.connect(gain);
+      gain.connect(paidAudio.destination);
+      osc.start(t0 + start);
+      osc.stop(t0 + start + dur + 0.02);
+    }
+    tone(1318.5, 0, 0.11, 0.07);
+    tone(1760, 0.10, 0.16, 0.08);
+  }
+  function watchPaidChimeOnce(){
+    var paid = document.querySelector('.tap__paid');
+    if (!paid) return;
+    function tick(){
+      var anims = paid.getAnimations();
+      if (anims.length){
+        var cur = anims[0].currentTime || 0;
+        if (cur >= 2200){
+          playPaidChime();
+          return;
+        }
+      }
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
 
   var mio = new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
@@ -2023,45 +3079,6 @@
     if (el.getAttribute('data-motion') === 'entertain' || el.getAttribute('data-motion') === 'sell') return;
     mio.observe(el);
   });
-
-  // signal-mid-v1: yellow when the housing center crosses ~58% of the viewport
-  // from the top (band 55–60%). 150ms delay to yellow; immediate green when
-  // scrolled back above that line.
-  var SIGNAL_LINE = 0.58;
-  function housingCenterCrossed(el){
-    var housing = el.querySelector('.signal__housing') || el;
-    var r = housing.getBoundingClientRect();
-    var mid = (r.top + r.bottom) / 2;
-    return mid <= (window.innerHeight * SIGNAL_LINE);
-  }
-  function updateSignals(){
-    signals.forEach(function(el){
-      if (el._signalTimer){
-        clearTimeout(el._signalTimer);
-        el._signalTimer = null;
-      }
-      if (housingCenterCrossed(el)){
-        el._signalTimer = setTimeout(function(){
-          el._signalTimer = null;
-          el.classList.add('is-playing');
-        }, 150);
-      } else {
-        el.classList.remove('is-playing');
-      }
-    });
-  }
-  var signalTick = false;
-  function onSignalScroll(){
-    if (signalTick) return;
-    signalTick = true;
-    requestAnimationFrame(function(){
-      signalTick = false;
-      updateSignals();
-    });
-  }
-  window.addEventListener('scroll', onSignalScroll, {passive:true});
-  window.addEventListener('resize', onSignalScroll);
-  updateSignals();
 })();
 </script>
 
